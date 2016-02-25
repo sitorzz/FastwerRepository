@@ -6,5 +6,14 @@ $password="root";
 $db="fastwer";
 $con = new mysqli($host,$user,$password,$db);
 
-echo "conecta";
+if($con -> connect_error){
+
+    die("Conexion fallida" . $con -> connect_error);
+
+}
+else{
+
+    echo "conecta:";
+
+}
 ?>

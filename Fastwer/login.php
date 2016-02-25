@@ -1,4 +1,6 @@
+<?php session_start(); ?>
 <!DOCTYPE html>
+
 <html lang="en">
 
 <head>
@@ -60,7 +62,7 @@
                     <li>
                         <a href="#">Pólitica del sitio</a>
                     </li>
-                    
+
                 </ul>
             </div>
             <!-- /.navbar-collapse -->
@@ -68,17 +70,17 @@
         <!-- /.container -->
     </nav>
     <div class="container">
-        
+
         <h1 class="text-center">FASTWER</h1>
-        
- 
+
+
     <div id="myCarousel" class="carousel slide" data-ride="carousel">
   <!-- Indicators -->
   <ol class="carousel-indicators">
     <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
     <li data-target="#myCarousel" data-slide-to="1"></li>
     <li data-target="#myCarousel" data-slide-to="2"></li>
-  
+
   </ol>
 
   <!-- Wrapper for slides -->
@@ -107,21 +109,21 @@
     <span class="sr-only">Next</span>
   </a>
   </div>
-      
+
  <div class="jumbotron">
-  <div class="row"> 
+  <div class="row">
     <div class="col-sm-4">
       <h3>Crea tu pregunta</h3>
-      
+
       <p>Ante cualquier situación dudosa, accede rápidamente a nuestro portal y escribe tu pregunta.</p>
     </div>
     <div class="col-sm-4">
       <h3>Escoge tus respuestas</h3>
       <p>Te ofrecemos 2 tipos de respuesta, la más rápida de si/no y la posibilidad de escribir tu mismo hasta 4.</p>
-      
+
     </div>
     <div class="col-sm-4">
-      <h3>Publícalas</h3>        
+      <h3>Publícalas</h3>
       <p>Publicalas tanto para tus seguidores como para el mundo entero y quédate mucho más tranquilo.</p>
     </div>
   </div>
@@ -129,7 +131,7 @@
     </div>
     <section id="acceder">
 <div class="panel-group" id="accordion">
-    
+
   <div class="panel panel-default">
     <div class="panel-heading">
       <h4 class="panel-title">
@@ -151,9 +153,11 @@
 		    <input type="password" class="form-control" id="password2" name="password2" placeholder="Contrase&ntilde;a">
 		  </div>
 
-		  <button type="submit" class="btn btn-default">Acceder</button>
+		  <button type="submit" class="btn btn-default" name="login">Acceder</button>
 		</form>
+
           </div>
+
         </div>
     </div>
   </div>
@@ -167,7 +171,7 @@
         Registrarse</a>
       </h4>
     </div>
-       
+
     <div id="collapse2" class="panel-collapse collapse">
       <div class="panel-body">
           <div class="container">
@@ -191,7 +195,7 @@
 		    <input type="password" class="form-control" id="confirm_password" name="confirm_password" placeholder="Confirmar Contrase&ntilde;a">
 		  </div>
 
-		  <button type="submit" class="btn btn-default">Registrar</button>
+		  <button type="submit" class="btn btn-default" name="registro">Registrar</button>
 		</form>
 
           </div>
@@ -200,20 +204,20 @@
       </div>
         </section>
     </div>
-   
+
 
     <footer id="footer">
         <div class="container">
             <div class="row">
-                
+
             </div>
         </div>
     </footer><!--/#footer-->
 <!-- jQuery -->
     <script src="js/jquery.js"></script>
-    <script src="js/valida_registro.js"></script>
-    <script src="js/valida_login.js"></script>
+
     <!-- Bootstrap Core JavaScript -->
     <script src="js/bootstrap.min.js"></script>
 </body>
 </html>
+
