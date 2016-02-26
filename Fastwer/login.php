@@ -1,4 +1,5 @@
 <?php session_start(); ?>
+
 <!DOCTYPE html>
 
 <html lang="en">
@@ -146,11 +147,11 @@
 		<form role="form" name="login" action="php/login.php" method="post">
 		  <div class="form-group">
 		    <label for="username">Nombre de usuario o email</label>
-		    <input type="text" class="form-control" id="username2" name="username2" placeholder="Nombre de usuario">
+		    <input type="text" class="form-control" id="username2" name="username2" placeholder="Nombre de usuario" />
 		  </div>
 		  <div class="form-group">
 		    <label for="password">Contrase&ntilde;a</label>
-		    <input type="password" class="form-control" id="password2" name="password2" placeholder="Contrase&ntilde;a">
+		    <input type="password" class="form-control" id="password2" name="password2" placeholder="Contrase&ntilde;a" />
 		  </div>
 
 		  <button type="submit" class="btn btn-default" name="login">Acceder</button>

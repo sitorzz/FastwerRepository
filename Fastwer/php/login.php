@@ -9,14 +9,15 @@
 
 			$result = $con->query($query);
 
-			$username = $_POST["username2"];
-			echo $username;
+			$username = $_POST['username2'];
+			var_dump($username);
 
 			if ($result->num_rows > 0) {
 
 				while ($row = $result->fetch_assoc()) {
-					echo "bucleaso";
-					$user_id = 0;
+
+
+					$user_id = 1;
 
 					$id = $row["id"];
 					echo "bucleaso".$id.$user_id;
@@ -25,11 +26,11 @@
 				}
 			}
 
-			/*if ( $user_id !=  0 ){
+			if ( $user_id == 0 ){
 
 				print "<script>alert(\"Acceso invalido.\");window.location='../login.php';</script>";
 
-			}else{*/
+			}else{
 
 				$_SESSION["user_id"]= $id;
 
@@ -37,7 +38,7 @@
 
 				print "<script>window.location='../index.php';</script>";
 
-				//	}
+					}
 
 			$con->close();
 
