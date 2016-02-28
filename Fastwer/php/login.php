@@ -1,11 +1,13 @@
 <?php
 
 			include "conexion.php";
+            
+
 
 			$user_id = 0;
 			$id;
 			$username;
-			$query= "select * from user where (username='".$_POST['username2']."' or email='".$_POST['email2']."') and password='".$_POST['password2']."'";
+			$query= "select * from user where (username='".$_POST['username2']."' or email='".$_POST['username2']."') and password='".$_POST['password2']."'";
 
 			$result = $con->query($query);
 
@@ -37,10 +39,9 @@
 
             echo $user_id;
 
+                session_start();
 			
-				$_SESSION["id"]= $id;
-
-				session_start();
+				$_SESSION["id"]= $id;				
 
 				print "<script>window.location='../home.php';</script>";
            }

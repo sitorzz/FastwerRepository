@@ -12,13 +12,17 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>FASTWER</title>
-
+    <title>FastWer, tu aplicación de preguntas y respuestas</title>
+    
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
+  <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
     <!-- Bootstrap Core CSS -->
-    <link href="css/bootstrap.min.css" rel="stylesheet">
-
-    <!-- Custom CSS -->
+    <link href="css/bootstrap.css" rel="stylesheet">
     <link href="css/small-business.css" rel="stylesheet">
+    
+    
+
+    
 
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -30,8 +34,7 @@
 </head>
 
 <body>
-  <!-- Navigation -->
-    <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+<nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
         <div class="container">
             <!-- Brand and toggle get grouped for better mobile display -->
             <div class="navbar-header">
@@ -70,9 +73,9 @@
         </div>
         <!-- /.container -->
     </nav>
-    <div class="container">
+    <div class="container-fluid">
 
-        <h1 class="text-center">FASTWER</h1>
+        <h1 class="text-center">FastWer</h1>
 
 
     <div id="myCarousel" class="carousel slide" data-ride="carousel">
@@ -83,6 +86,7 @@
     <li data-target="#myCarousel" data-slide-to="2"></li>
 
   </ol>
+        
 
   <!-- Wrapper for slides -->
   <div class="carousel-inner" role="listbox">
@@ -99,8 +103,7 @@
     </div>
 
   </div>
-
-  <!-- Left and right controls -->
+        <!-- Left and right controls -->
   <a class="left carousel-control" href="#myCarousel" role="button" data-slide="prev">
     <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
     <span class="sr-only">Previous</span>
@@ -109,10 +112,11 @@
     <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
     <span class="sr-only">Next</span>
   </a>
-  </div>
+        </div>
+        
+        
 
-
-  <div class="row">
+  
     <div class="col-xs-12 col-md-4">
       <h3>Crea tu pregunta</h3>
 
@@ -127,23 +131,20 @@
       <h3>Publícalas</h3>
       <p>Publícalas tanto para tus seguidores como para el mundo entero y quédate mucho más tranquilo.</p>
     </div>
-  </div>
-
-    </div>
-    <section id="acceder">
-<div class="panel-group" id="accordion">
-
-  <div class="panel panel-default">
-    <div class="panel-heading">
-      <h4 class="panel-title">
-        <a data-toggle="collapse" data-parent="#accordion" href="#collapse1">
-        Acceder</a>
-      </h4>
-    </div>
-    <div id="collapse1" class="panel-collapse collapse in">
-      <div class="panel-body"><div class="container">
-          <h2>Login</h2>
-
+        
+</div>
+    
+    
+<div class="container col-md-12">
+  <div class="panel-group" id="accordion">
+    <div class="panel panel-default">
+      <div class="panel-heading">
+        <h4 class="panel-title">
+          <a data-toggle="collapse" data-parent="#accordion" href="#collapse1">Login</a>
+        </h4>
+      </div>
+        <div id="collapse1" class="panel-collapse collapse in">
+             <div class="panel-body">
 		<form role="form" name="login" action="php/login.php" method="post">
 
 		    <label for="username">Nombre de usuario o email</label>
@@ -155,30 +156,21 @@
 
 		  <button type="submit" class="btn btn-default" name="login">Acceder</button>
 		</form>
-
-          </div>
-
-        </div>
+            </div>
+      </div>
     </div>
-  </div>
-    </div>
-    </section>
-    <section id="registrarse">
+
+
   <div class="panel panel-default">
-    <div class="panel-heading">
-      <h4 class="panel-title">
-        <a data-toggle="collapse" data-parent="#accordion" href="#collapse2">
-        Registrarse</a>
-      </h4>
-    </div>
-
-    <div id="collapse2" class="panel-collapse collapse">
-      <div class="panel-body">
-          <div class="container">
-<h2>Registro</h2>
-
+      <div class="panel-heading">
+        <h4 class="panel-title">
+          <a data-toggle="collapse" data-parent="#accordion" href="#collapse2">Registro</a>
+        </h4>
+      </div>
+      
+      <div id="collapse2" class="panel-collapse collapse">
 		<form role="form" name="registro" action="php/registro.php" method="post">
-		
+		 <div class="panel-body">
 		    <label for="username">Nombre de usuario</label>
 		    <input type="text" class="form-control" id="username" name="username" placeholder="Nombre de usuario" PATTERN = "[a-z0-9_-]{3,15}$" title="Debe contener de 3 a 15 caracteres sin signos de puntuación ni caracteres especiales" required>
 		  
@@ -197,13 +189,12 @@
 
 		  <button type="submit" class="btn btn-default" name="registro">Registrar</button>
 		</form>
-
-          </div>
-    </div>
-  </div>
+          </form>
       </div>
-        </section>
-    </div>
+  </div> 
+</div>
+</div>
+        
 
 
     <footer id="footer">
