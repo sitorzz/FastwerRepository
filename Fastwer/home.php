@@ -89,7 +89,7 @@ include "php/session.php";
                 <h1>Visualizar</h1>
                 <p>¿Tienes muchas preguntas y nadie de tu alrededor sabe la respuesta? </p>
                 <p>Fastwer es tu solución! Haz click en Alta Pregunta y sube todas las dudas que tengas. </p>
-                <p>Puedes optar por dos tipos de respuesta, la rápida es de (si o no) o la larga es que tu decides tres posibles respuestas</p>
+                <p>Puedes optar por dos tipos de respuesta, la rápida es de (si o no) o la larga es que tu decides tres posibles respuestas.</p>
                 <a class="btn btn-primary btn-lg" href="add_question.php">Alta pregunta!</a>
             </div>
             <!-- /.col-md-4 -->
