@@ -1,7 +1,11 @@
-<?php
-$connect  = mysqli_connect("localhost","root","root","fastwer_db") or die("Error " . mysqli_error($link));
+<?php 
+session_start();
+/*session is started if you don't write this line can't use $_Session  global variable*/
+$id=$_SESSION["id"];
+/*session created*/
+echo $_SESSION["id"];
+/*session was getting*/
 ?>
-
 
 <!DOCTYPE html>
 <html lang="en">
@@ -146,6 +150,8 @@ $connect  = mysqli_connect("localhost","root","root","fastwer_db") or die("Error
 
            	<?php
 
+                include "php/conexion.php";
+
            		if(isset($_POST["titulPreg"])){
 
         		$tituloPregun = $_POST["titulPreg"];
@@ -211,6 +217,8 @@ $connect  = mysqli_connect("localhost","root","root","fastwer_db") or die("Error
         		}
         	}
         }
+
+        $con->close;
         	?>
 
 
