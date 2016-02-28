@@ -69,7 +69,7 @@ echo $_SESSION["id"];
                     <a href="#">Soporte</a>
                 </li>
                 <li>
-                    <a href="#">Mi perfil</a>
+                    <a href="profile.php">Mi perfil</a>
                 </li>
                 <li>
                 <a href="php/logout.php">Cerrar Sesión</a>
