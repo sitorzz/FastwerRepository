@@ -1,10 +1,5 @@
 <?php 
-session_start();
-/*session is started if you don't write this line can't use $_Session  global variable*/
-$id=$_SESSION["id"];
-/*session created*/
-echo $_SESSION["id"];
-/*session was getting*/
+include "php/session.php";
 ?>
 
 <!DOCTYPE html>
