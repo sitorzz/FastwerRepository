@@ -12,12 +12,15 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>FASTWER</title>
+    <title>FastWer, tu aplicación de preguntas y respuestas</title>
     
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
   <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
     <!-- Bootstrap Core CSS -->
     <link href="css/bootstrap.css" rel="stylesheet">
+    <link href="css/small-business.css" rel="stylesheet">
+    
+    
 
     
 
@@ -31,8 +34,7 @@
 </head>
 
 <body>
-  <!-- Navigation -->
-    <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+<nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
         <div class="container">
             <!-- Brand and toggle get grouped for better mobile display -->
             <div class="navbar-header">
@@ -71,9 +73,9 @@
         </div>
         <!-- /.container -->
     </nav>
-    <div class="container">
+    <div class="container-fluid">
 
-        <h1 class="text-center">FASTWER</h1>
+        <h1 class="text-center">FastWer</h1>
 
 
     <div id="myCarousel" class="carousel slide" data-ride="carousel">
@@ -84,6 +86,7 @@
     <li data-target="#myCarousel" data-slide-to="2"></li>
 
   </ol>
+        
 
   <!-- Wrapper for slides -->
   <div class="carousel-inner" role="listbox">
@@ -100,8 +103,7 @@
     </div>
 
   </div>
-
-  <!-- Left and right controls -->
+        <!-- Left and right controls -->
   <a class="left carousel-control" href="#myCarousel" role="button" data-slide="prev">
     <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
     <span class="sr-only">Previous</span>
@@ -110,10 +112,11 @@
     <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
     <span class="sr-only">Next</span>
   </a>
-  </div>
+        </div>
+        
+        
 
-
-  <div class="row">
+  
     <div class="col-xs-12 col-md-4">
       <h3>Crea tu pregunta</h3>
 
@@ -128,10 +131,11 @@
       <h3>Publícalas</h3>
       <p>Publícalas tanto para tus seguidores como para el mundo entero y quédate mucho más tranquilo.</p>
     </div>
-  </div>
+        
 </div>
     
-<div class="container">
+    
+<div class="container col-md-12">
   <div class="panel-group" id="accordion">
     <div class="panel panel-default">
       <div class="panel-heading">
@@ -190,7 +194,7 @@
   </div> 
 </div>
 </div>
-    
+        
 
 
     <footer id="footer">

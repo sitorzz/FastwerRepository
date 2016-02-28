@@ -66,6 +66,10 @@ include "php/session.php"
                     <li>
                         <a href="#">Mi perfil</a>
                     </li>
+                    
+                    <li>
+                        <a href="php/logout.php">Cerrar sesión</a>
+                    </li>
 
                 </ul>
             </div>
@@ -79,7 +83,8 @@ include "php/session.php"
 
 
   <!-- Wrapper for slides -->
-  <div>
+  <div class="row">
+      <div class="text-center">
         <?php
 
         include 'php/conexion.php';
@@ -94,9 +99,10 @@ include "php/session.php"
              
          echo '<div class="row">
                 <div class="col-xs-12" >
-                <h3>'.$row[1].'</h3>
+                <h3>'.$row[0].'</h3>
+                
                     <div class="imageContainer">
-                        <img src="'.$row[4].'" style="width:300px;height:250px;>
+                        <img src="'.$row[1].'" style="width:300px;height:250px;/>
                     </div>  
                     
                     
@@ -106,105 +112,8 @@ include "php/session.php"
       
          $con->close();
       ?> 
-  <div>
- 
-
-
-
-  <div class="row">
-    <div class="col-xs-12 col-md-4">
-      <h3>Crea tu pregunta</h3>
-
-      <p>Ante cualquier situación dudosa, accede rápidamente a nuestro portal y escribe tu pregunta.</p>
+</div>
     </div>
-    <div class="col-xs-12 col-md-4">
-      <h3>Escoge tus respuestas</h3>
-      <p>Te ofrecemos 2 tipos de respuesta, la más rápida de si/no y la posibilidad de escribir tu mismo hasta 4.</p>
-
-    </div>
-    <div class="col-xs-12 col-md-4">
-      <h3>Publícalas</h3>
-      <p>Publícalas tanto para tus seguidores como para el mundo entero y quédate mucho más tranquilo.</p>
-    </div>
-  </div>
-
-    </div>
-    <section id="acceder">
-<div class="panel-group" id="accordion">
-
-  <div class="panel panel-default">
-    <div class="panel-heading">
-      <h4 class="panel-title">
-        <a data-toggle="collapse" data-parent="#accordion" href="#collapse1">
-        Acceder</a>
-      </h4>
-    </div>
-    <div id="collapse1" class="panel-collapse collapse in">
-      <div class="panel-body"><div class="container">
-          <h2>Login</h2>
-
-		<form role="form" name="login" action="php/login.php" method="post">
-
-		    <label for="username">Nombre de usuario o email</label>
-		    <input type="text" class="form-control" id="username2" name="username2" placeholder="Nombre de usuario" required>
-
-		    <label for="password">Contrase&ntilde;a</label>
-		    <input type="password" class="form-control" id="password2" name="password2" placeholder="Contrase&ntilde;a" required>
-
-
-		  <button type="submit" class="btn btn-default" name="login">Acceder</button>
-		</form>
-
-          </div>
-
-        </div>
-    </div>
-  </div>
-    </div>
-    </section>
-    <section id="registrarse">
-  <div class="panel panel-default">
-    <div class="panel-heading">
-      <h4 class="panel-title">
-        <a data-toggle="collapse" data-parent="#accordion" href="#collapse2">
-        Registrarse</a>
-      </h4>
-    </div>
-
-    <div id="collapse2" class="panel-collapse collapse">
-      <div class="panel-body">
-          <div class="container">
-<h2>Registro</h2>
-
-		<form role="form" name="registro" action="php/registro.php" method="post">
-		
-		    <label for="username">Nombre de usuario</label>
-		    <input type="text" class="form-control" id="username" name="username" placeholder="Nombre de usuario" PATTERN = "[a-z0-9_-]{3,15}$" title="Debe contener de 3 a 15 caracteres sin signos de puntuación ni caracteres especiales" required>
-		  
-		 
-		    <label for="email">Correo Electronico</label>
-		    <input type="email" class="form-control" id="email" name="email" placeholder="Correo Electronico" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,3}$" required>
-		  
-		
-		    <label for="password">Contrase&ntilde;a</label>
-		    <input type="password" class="form-control" id="password" name="password" placeholder="Contrase&ntilde;a" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{5,}" title="Must contain at least one number and one uppercase and lowercase letter, and at least 5 or more characters" required>
-		  
-	
-		    <label for="confirm_password">Confirmar Contrase&ntilde;a</label>
-		    <input type="password" class="form-control" id="confirm_password" name="confirm_password" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{5,}" title="Must contain at least one number and one uppercase and lowercase letter, and at least 5 or more characters" placeholder="Confirmar Contrase&ntilde;a" required>
-		  
-
-		  <button type="submit" class="btn btn-default" name="registro">Registrar</button>
-		</form>
-
-          </div>
-    </div>
-  </div>
-      </div>
-        </section>
-    </div>
-
-
     <footer id="footer">
         <div class="container">
             <div class="row">
@@ -212,11 +121,7 @@ include "php/session.php"
             </div>
         </div>
     </footer><!--/#footer-->
-<!-- jQuery -->
-    <script src="js/jquery.js"></script>
 
-    <!-- Bootstrap Core JavaScript -->
-    <script src="js/bootstrap.min.js"></script>
 </body>
 </html>
 
