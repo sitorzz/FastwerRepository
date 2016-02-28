@@ -120,17 +120,13 @@ include "php/session.php"
             include "php/conexion.php";
 
 
-                $consulta_mysql="select * from question where fk_user = $id_session";
+                $consulta_mysql="select q.title,q.question from question q where fk_user = $id_session";
 
-                $resultado_consulta_mysql=mysqli_query($con,$consulta_mysql);
-        
-                
+                $result = $con->query($consulta_mysql);
                 
                 while ($row = mysqli_fetch_array($resultado_consulta_mysql)) {
                
                  echo'
-             
-                    
                     <div class="col-xs-6 col-md-12">
                     <p>hola</p>
                     <h2>'. $row['title'] .'</h2><p>' .$row['question'] . '
