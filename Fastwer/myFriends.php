@@ -1,3 +1,9 @@
+<?php 
+
+include "php/session.php";
+
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -62,6 +68,9 @@
                     </li>
                     <li>
                         <a href="#">Mi perfil</a>
+                    </li>                    
+                    <li>
+                        <a href="php/logout.php">Cerrar sesión</a>
                     </li>
                 </ul>
             </div>
@@ -102,7 +111,7 @@
 
         include 'php/conect.php';
 
-        $result = mysqli_query($con,"SELECT u.username,u.user_avatar FROM friends f, user u WHERE u.id = f.id_friend AND f.id_user=1 ORDER BY u.username");
+        $result = mysqli_query($con,"SELECT u.username,u.user_avatar FROM friends f, user u WHERE u.id = f.id_friend AND f.id_user='.$id_session.' ORDER BY u.username");
          if (!$result) {
          die("Database query failed: " . mysqli_error());
          }
