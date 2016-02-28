@@ -55,10 +55,10 @@ include "php/session.php";
             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                 <ul class="nav navbar-nav">
                     <li>
-                        <a href="#">Visualizar</a>
+                        <a href="home.php">Visualizar</a>
                     </li>
                     <li>
-                        <a href="#">Nueva Pregunta</a>
+                        <a href="add_question.php">Nueva Pregunta</a>
                     </li>
                     <li>
                         <a href="#">Amigos</a>

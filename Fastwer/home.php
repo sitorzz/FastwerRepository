@@ -60,7 +60,7 @@ echo $_SESSION["id"];
                         <a href="home.php">Visualizar</a>
                     </li>
                     <li>
-                        <a href="alta_pregunta.php">Nueva Pregunta</a>
+                        <a href="add_question.php">Nueva Pregunta</a>
                     </li>
                     <li>
                         <a href="myFriends.php">Amigos</a>
