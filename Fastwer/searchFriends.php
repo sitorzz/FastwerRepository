@@ -106,7 +106,7 @@ include "php/session.php";
      
         include 'php/conexion.php';
 
-        $result = mysqli_query($con,"SELECT u.username, u.user_avatar FROM user u WHERE u.username LIKE '%".$friends."%' ORDER BY u.username");
+        $result = mysqli_query($con,"SELECT u.username, u.user_avatar FROM user u WHERE u.username LIKE '%".$friends."%' AND u.id !='".$id_session."' ORDER BY u.username");
          if (!$result) {
          die("Database query failed: " . mysqli_error());
          }
@@ -119,7 +119,7 @@ include "php/session.php";
                         <img src="'.$row[1].'">
                     </div>  
                     <h class="nameFriend" >'.$row[0].'</h>
-                    <a class="btn btn-primary btn-lg addFriend" href="#">Ver perfil</a>
+                    <a class="btn btn-primary btn-lg addFriend" href="#">Añadir amigos</a>
                 </div>
             </div>';
          }
