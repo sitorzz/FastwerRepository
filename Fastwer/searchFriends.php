@@ -83,40 +83,30 @@ include "php/session.php";
     <div class="container">
 
 
-                <!-- Texto informativo -->
+        <!-- Texto informativo -->
         <div class="row">
             <div class="col-lg-12">
                 <div class="well text-center">
-                    MIS AMIGOS
+                    BUSCAR AMIGOS
                 </div>
             </div>            
-        </div>
+        </div>   
+        
+        
+        
         
             
-        
-        <!-- Buscar amigos -->
-        
-        <form method="post" role="form" name="registro" action="searchFriends.php">
-
-            <h>Buscar amigo:</h>
-
-            <input type="text" name="nameFriend" placeholder="nombre">
-
-            <input type="submit" name="submit" value="Buscar" class="btn btn-default">
-            
-        </form>
- 
-        <hr>
-        
-        
     
-        <!-- Amigos PHP -->
+        <!-- Buscar Amigos PHP -->
             
-         <?php
+       <?php
 
+        
+        $friends = $_POST['nameFriend'];        
+     
         include 'php/conexion.php';
 
-        $result = mysqli_query($con,"SELECT u.username,u.user_avatar FROM friends f, user u WHERE u.id = f.id_friend AND f.id_user='.$id_session.' ORDER BY u.username");
+        $result = mysqli_query($con,"SELECT u.username, u.user_avatar FROM user u WHERE u.username LIKE '%".$friends."%' ORDER BY u.username");
          if (!$result) {
          die("Database query failed: " . mysqli_error());
          }
@@ -135,6 +125,14 @@ include "php/session.php";
          }
          
       ?>       
+        
+        
+        
+        
+        
+        
+        
+        
         
         
 

@@ -1,8 +1,6 @@
 <?php
 
-			include "conexion.php";
-            include "sesion.php";
-
+			include "conexion.php";            
 
 			$user_id = 0;
 			$id;
