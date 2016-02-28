@@ -55,7 +55,7 @@ echo $_SESSION["id"];
         </div>
         <!-- Collect the nav links, forms, and other content for toggling -->
         <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-            <ul class="nav navbar-nav">
+               <ul class="nav navbar-nav">
                 <li>
                     <a href="#">Visualizar</a>
                 </li>
@@ -75,6 +75,7 @@ echo $_SESSION["id"];
                 <a href="php/logout.php">Cerrar Sesión</a>
                 </li>
             </ul>
+
         </div>
         <!-- /.navbar-collapse -->
     </div>

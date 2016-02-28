@@ -1,4 +1,6 @@
-<?php session_start(); ?>
+<?php
+include "php/session.php"
+    ?>
 
 <!DOCTYPE html>
 
@@ -13,13 +15,12 @@
     <meta name="author" content="">
 
     <title>FASTWER</title>
-    
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
-  <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+
     <!-- Bootstrap Core CSS -->
     <link href="css/bootstrap.css" rel="stylesheet">
 
-    
+    <!-- Custom CSS -->
+    <link href="css/small-business.css" rel="stylesheet">
 
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -49,20 +50,21 @@
             <!-- Collect the nav links, forms, and other content for toggling -->
             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                 <ul class="nav navbar-nav">
+                    
                     <li>
-                        <a href="#">Servicios</a>
+                        <a href="home.php">Visualizar</a>
                     </li>
                     <li>
-                        <a href="#registrarse">Registrarse</a>
+                        <a href="#">Nueva Pregunta</a>
                     </li>
                     <li>
-                        <a href="#acceder">Acceder</a>
+                        <a href="myFriends.php">Amigos</a>
                     </li>
                     <li>
-                        <a href="#">Sobre nosotros</a>
+                        <a href="#">Soporte</a>
                     </li>
                     <li>
-                        <a href="#">Pólitica del sitio</a>
+                        <a href="#">Mi perfil</a>
                     </li>
 
                 </ul>
@@ -71,46 +73,42 @@
         </div>
         <!-- /.container -->
     </nav>
-    <div class="container">
-
-        <h1 class="text-center">FASTWER</h1>
+  
 
 
-    <div id="myCarousel" class="carousel slide" data-ride="carousel">
-  <!-- Indicators -->
-  <ol class="carousel-indicators">
-    <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
-    <li data-target="#myCarousel" data-slide-to="1"></li>
-    <li data-target="#myCarousel" data-slide-to="2"></li>
 
-  </ol>
 
   <!-- Wrapper for slides -->
-  <div class="carousel-inner" role="listbox">
-    <div class="item active">
-      <img src="images/carousel/redes.jpg" alt="Fastwer">
-    </div>
+  <div>
+        <?php
 
-    <div class="item">
-      <img src="images/carousel/redes.jpg" alt="Chania">
-    </div>
+        include 'php/conexion.php';
+        
 
-    <div class="item">
-      <img src="images/carousel/redes.jpg" alt="Flower">
-    </div>
+        $result = mysqli_query($con,"SELECT u.username,u.user_avatar FROM user u WHERE u.id = $id_session");
+         if (!$result) {
+         die("Database query failed: " . mysqli_error());
+         }
+                  
+         while ($row = mysqli_fetch_array($result)) {
+             
+         echo '<div class="row">
+                <div class="col-xs-12" >
+                <h3>'.$row[1].'</h3>
+                    <div class="imageContainer">
+                        <img src="'.$row[4].'" style="width:300px;height:250px;>
+                    </div>  
+                    
+                    
+                </div>
+            </div>';
+         }
+      
+         $con->close();
+      ?> 
+  <div>
+ 
 
-  </div>
-
-  <!-- Left and right controls -->
-  <a class="left carousel-control" href="#myCarousel" role="button" data-slide="prev">
-    <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
-    <span class="sr-only">Previous</span>
-  </a>
-  <a class="right carousel-control" href="#myCarousel" role="button" data-slide="next">
-    <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
-    <span class="sr-only">Next</span>
-  </a>
-  </div>
 
 
   <div class="row">
@@ -129,18 +127,22 @@
       <p>Publícalas tanto para tus seguidores como para el mundo entero y quédate mucho más tranquilo.</p>
     </div>
   </div>
-</div>
-    
-<div class="container">
-  <div class="panel-group" id="accordion">
-    <div class="panel panel-default">
-      <div class="panel-heading">
-        <h4 class="panel-title">
-          <a data-toggle="collapse" data-parent="#accordion" href="#collapse1">Login</a>
-        </h4>
-      </div>
-        <div id="collapse1" class="panel-collapse collapse in">
-             <div class="panel-body">
+
+    </div>
+    <section id="acceder">
+<div class="panel-group" id="accordion">
+
+  <div class="panel panel-default">
+    <div class="panel-heading">
+      <h4 class="panel-title">
+        <a data-toggle="collapse" data-parent="#accordion" href="#collapse1">
+        Acceder</a>
+      </h4>
+    </div>
+    <div id="collapse1" class="panel-collapse collapse in">
+      <div class="panel-body"><div class="container">
+          <h2>Login</h2>
+
 		<form role="form" name="login" action="php/login.php" method="post">
 
 		    <label for="username">Nombre de usuario o email</label>
@@ -152,21 +154,30 @@
 
 		  <button type="submit" class="btn btn-default" name="login">Acceder</button>
 		</form>
-            </div>
-      </div>
+
+          </div>
+
+        </div>
+    </div>
+  </div>
+    </div>
+    </section>
+    <section id="registrarse">
+  <div class="panel panel-default">
+    <div class="panel-heading">
+      <h4 class="panel-title">
+        <a data-toggle="collapse" data-parent="#accordion" href="#collapse2">
+        Registrarse</a>
+      </h4>
     </div>
 
+    <div id="collapse2" class="panel-collapse collapse">
+      <div class="panel-body">
+          <div class="container">
+<h2>Registro</h2>
 
-  <div class="panel panel-default">
-      <div class="panel-heading">
-        <h4 class="panel-title">
-          <a data-toggle="collapse" data-parent="#accordion" href="#collapse2">Registro</a>
-        </h4>
-      </div>
-      
-      <div id="collapse2" class="panel-collapse collapse">
 		<form role="form" name="registro" action="php/registro.php" method="post">
-		 <div class="panel-body">
+		
 		    <label for="username">Nombre de usuario</label>
 		    <input type="text" class="form-control" id="username" name="username" placeholder="Nombre de usuario" PATTERN = "[a-z0-9_-]{3,15}$" title="Debe contener de 3 a 15 caracteres sin signos de puntuación ni caracteres especiales" required>
 		  
@@ -185,12 +196,13 @@
 
 		  <button type="submit" class="btn btn-default" name="registro">Registrar</button>
 		</form>
-          </form>
+
+          </div>
+    </div>
+  </div>
       </div>
-  </div> 
-</div>
-</div>
-    
+        </section>
+    </div>
 
 
     <footer id="footer">
