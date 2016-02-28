@@ -1,10 +1,5 @@
 <?php 
-session_start();
-/*session is started if you don't write this line can't use $_Session  global variable*/
-$id=$_SESSION["id"];
-/*session created*/
-echo $_SESSION["id"];
-/*session was getting*/
+include "php/session.php";
 ?>
 
 <!DOCTYPE html>
@@ -68,7 +63,7 @@ echo $_SESSION["id"];
                         <a href="#">Soporte</a>
                     </li>
                     <li>
-                        <a href="#">Mi perfil</a>
+                        <a href="profile.php">Mi perfil</a>
                     </li>
                     <li>
                         <a href="php/logout.php">Cerrar sesión</a>
@@ -86,7 +81,7 @@ echo $_SESSION["id"];
         <!-- Heading Row -->
         <div class="row">
             <div class="col-xs-12">
-                <img class="img-responsive img-rounded" src="http://placehold.it/900x350" alt="">
+                <img class="img-responsive img-rounded" src="http://placehold.it/1250x150" alt="">
             </div>
             <!-- /.col-md-8 -->
             <div class="col-xs-12">
