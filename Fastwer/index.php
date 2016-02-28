@@ -172,7 +172,7 @@
 		<form role="form" name="registro" action="php/registro.php" method="post">
 		 <div class="panel-body">
 		    <label for="username">Nombre de usuario</label>
-		    <input type="text" class="form-control" id="username" name="username" placeholder="Nombre de usuario" PATTERN = "[a-z0-9_-]{3,15}$" title="Debe contener de 3 a 15 caracteres sin signos de puntuación ni caracteres especiales" required>
+		    <input type="text" class="form-control" id="username" name="username" placeholder="Nombre de usuario" PATTERN = "[a-zA-Z0-9_-]{3,15}$" title="Debe contener de 3 a 15 caracteres sin signos de puntuación, ni caracteres especiales" required>
 		  
 		 
 		    <label for="email">Correo Electronico</label>
@@ -180,11 +180,11 @@
 		  
 		
 		    <label for="password">Contrase&ntilde;a</label>
-		    <input type="password" class="form-control" id="password" name="password" placeholder="Contrase&ntilde;a" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{5,}" title="Must contain at least one number and one uppercase and lowercase letter, and at least 5 or more characters" required>
+		    <input type="password" class="form-control" id="password" name="password" placeholder="Contrase&ntilde;a" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{5,}" title="Debe contener una mayúscula, una minuscula, un número y más de 5 caracteres por su seguridad" required>
 		  
 	
 		    <label for="confirm_password">Confirmar Contrase&ntilde;a</label>
-		    <input type="password" class="form-control" id="confirm_password" name="confirm_password" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{5,}" title="Must contain at least one number and one uppercase and lowercase letter, and at least 5 or more characters" placeholder="Confirmar Contrase&ntilde;a" required>
+		    <input type="password" class="form-control" id="confirm_password" name="confirm_password" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{5,}" title="Debe contener una mayúscula, una minuscula, un número y más de 5 caracteres por su seguridad" placeholder="Confirmar Contrase&ntilde;a" required>
 		  
 
 		  <button type="submit" class="btn btn-default" name="registro">Registrar</button>

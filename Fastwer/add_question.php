@@ -162,17 +162,17 @@ include "php/session.php";
 
         			
         			
-		            if ($connect->query($insertRespSimp) === TRUE) {
+		            if ($con->query($insertRespSimp) === TRUE) {
 
 						$selectPk2="select id_question from question where question='$textoPregun'";
-						$resultado_consulta_mysql2 = mysqli_query($connect, $selectPk2);
+						$resultado_consulta_mysql2 = mysqli_query($con, $selectPk2);
 
 					    while ($row1 = mysqli_fetch_array($resultado_consulta_mysql2)) {
 
 	        			$insertRespost="insert into answer(fk_question,answer) values ('$row1[0]','Si')";
 	        			$insertRespost2="insert into answer(fk_question,answer) values ('$row1[0]','No')";
-	        			$connect->query($insertRespost);
-	        			$connect->query($insertRespost2);
+	        			$con->query($insertRespost);
+	        			$con->query($insertRespost2);
 
 	        			}
 
