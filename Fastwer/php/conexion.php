@@ -2,8 +2,8 @@
 
 $host="localhost";
 $user="root";
-$password="root";
-$db="fastwer";
+$password="";
+$db="fastwer_db";
 $con = new mysqli($host,$user,$password,$db);
 
 if($con -> connect_error){

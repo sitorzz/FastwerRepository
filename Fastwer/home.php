@@ -1,7 +1,7 @@
 <?php 
 session_start();
 /*session is started if you don't write this line can't use $_Session  global variable*/
-$_SESSION["id"]=$id;
+$id=$_SESSION["id"];
 /*session created*/
 echo $_SESSION["id"];
 /*session was getting*/
@@ -63,7 +63,7 @@ echo $_SESSION["id"];
                     <a href="#">Nueva Pregunta</a>
                 </li>
                 <li>
-                    <a href="#">Amigos</a>
+                    <a href="myFriends.php">Amigos</a>
                 </li>
                 <li>
                     <a href="#">Soporte</a>
