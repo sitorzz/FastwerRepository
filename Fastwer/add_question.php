@@ -68,7 +68,7 @@ echo $_SESSION["id"];
                         <a href="#">Soporte</a>
                     </li>
                     <li>
-                        <a href="#">Mi perfil</a>
+                        <a href="profile.php">Mi perfil</a>
                     </li>
                     <li>
                         <a href="php/logout.php">Cerrar sesión</a>
@@ -86,7 +86,7 @@ echo $_SESSION["id"];
         <!-- Heading Row -->
         <div class="row">
             <div class="col-xs-12">
-                <img class="img-responsive img-rounded" src="http://placehold.it/900x350" alt="">
+                <img class="img-responsive img-rounded" src="http://placehold.it/1250x150" alt="">
             </div>
             <!-- /.col-md-8 -->
             <div class="col-xs-12">
