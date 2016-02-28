@@ -22,7 +22,7 @@ echo $_SESSION["id"];
     <title>FASTWER</title>
 
     <!-- Bootstrap Core CSS -->
-    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="css/bootstrap.css" rel="stylesheet">
 
     <!-- Custom CSS -->
     <link href="css/small-business.css" rel="stylesheet">
@@ -105,11 +105,10 @@ echo $_SESSION["id"];
         <div class="row">
             <div class="col-lg-12">
                 <div class="well text-center">
-                    <form action="index.php" method="post">
+                    <form action="home.php" method="post">
                     <select name="option">      
                          <option name=option default value="Per defecte">Por defecto</option>                    
                          <option name=option value="Temps">Tiempo</option>
-                         <option name=option value="A-Z">Alfabetico</option>
                     </select>
                     <button>Ordenar</button>
                     </form>
@@ -120,51 +119,49 @@ echo $_SESSION["id"];
         </div>
         <!-- /.row -->
 
-
+        <div class="row">
         <?php
 
-            var_dump($_POST["option"]);
+            include "php/conexion.php";
 
             if(isset($_POST['option'])){
                                             
             if($_POST['option']=='Per defecte'){
 
-                $consulta_mysql="select id_question,title, question,views,date_create from question";
+                $consulta_mysql="select id_question,title, question,views,date_create from question LIMIT 20";
 
             }
             else if($_POST['option']=='Temps'){
 
-                $consulta_mysql="select id_question,title, question,views,date_create from question ORDER BY date_create DESC";
+                $consulta_mysql="select id_question,title, question,views,date_create from question ORDER BY date_create DESC LIMIT 20";
 
-            }else if($_POST['option']=='A-Z'){
-
-                $consulta_mysql="select id_question,title, question,views,date_create,fk_user from question ORDER BY fk_user ASC";
             }
-
            
             }else{
 
-                $consulta_mysql="select id_question,title, question,views,date_create from question";
+                $consulta_mysql="select id_question,title, question,views,date_create from question LIMIT 20";
             }
 
 
-                $resultado_consulta_mysql=mysqli_query($connect,$consulta_mysql);
+                $resultado_consulta_mysql=mysqli_query($con,$consulta_mysql);
         
+                
+                
                 while ($row = mysqli_fetch_array($resultado_consulta_mysql)) {
 
-                 echo'<div class="row">
+                 echo'
              
 
-                    <div class="col-xs-12">
-                      <h2>'. $row['title'] .'</h2>' .$row['question'] . '
+                    <div class="col-xs-6">
+                    <h2>'. $row['title'] .'</h2><p>' .$row['question'] . '
 
-                    <a class="btn btn-default" href="#"">Responder pregunta...</a>
-                    </div> </div>';
+                    <a class="btn btn-default" href="#"">Responder pregunta...</a></p>
+                    </div> 
+                    ';
                 }
-
-
+                $con->close;
          ?>
-        
+        </div>
 
 
         <!-- /.row -->
