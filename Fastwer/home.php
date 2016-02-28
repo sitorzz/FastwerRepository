@@ -57,20 +57,20 @@ echo $_SESSION["id"];
         <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
             <ul class="nav navbar-nav">
                 <li>
-                    <a href="#">Visualizar</a>
-                </li>
-                <li>
-                    <a href="#">Nueva Pregunta</a>
-                </li>
-                <li>
-                    <a href="#">Amigos</a>
-                </li>
-                <li>
-                    <a href="#">Soporte</a>
-                </li>
-                <li>
-                    <a href="#">Mi perfil</a>
-                </li>
+                        <a href="#">Visualizar</a>
+                    </li>
+                    <li>
+                        <a href="#">Nueva Pregunta</a>
+                    </li>
+                    <li>
+                        <a href="myFriends.php">Seguidos</a>
+                    </li>
+                    <li>
+                        <a href="#">Soporte</a>
+                    </li>
+                    <li>
+                        <a href="profile.php">Mi perfil</a>
+                    </li>
                 <li>
                 <a href="php/logout.php">Cerrar Sesión</a>
                 </li>
