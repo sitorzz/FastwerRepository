@@ -55,24 +55,8 @@ echo $_SESSION["id"];
         </div>
         <!-- Collect the nav links, forms, and other content for toggling -->
         <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-            <ul class="nav navbar-nav">
+               <ul class="nav navbar-nav">
                 <li>
-<<<<<<< HEAD
-                        <a href="#">Visualizar</a>
-                    </li>
-                    <li>
-                        <a href="#">Nueva Pregunta</a>
-                    </li>
-                    <li>
-                        <a href="myFriends.php">Seguidos</a>
-                    </li>
-                    <li>
-                        <a href="#">Soporte</a>
-                    </li>
-                    <li>
-                        <a href="profile.php">Mi perfil</a>
-                    </li>
-=======
                     <a href="#">Visualizar</a>
                 </li>
                 <li>
@@ -85,13 +69,13 @@ echo $_SESSION["id"];
                     <a href="#">Soporte</a>
                 </li>
                 <li>
-                    <a href="#">Mi perfil</a>
+                    <a href="profile.php">Mi perfil</a>
                 </li>
->>>>>>> master
                 <li>
                 <a href="php/logout.php">Cerrar Sesión</a>
                 </li>
             </ul>
+
         </div>
         <!-- /.navbar-collapse -->
     </div>

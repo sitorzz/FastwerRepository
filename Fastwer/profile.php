@@ -17,7 +17,7 @@ include "php/session.php"
     <title>FASTWER</title>
 
     <!-- Bootstrap Core CSS -->
-    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="css/bootstrap.css" rel="stylesheet">
 
     <!-- Custom CSS -->
     <link href="css/small-business.css" rel="stylesheet">
@@ -85,7 +85,7 @@ include "php/session.php"
         include 'php/conexion.php';
         
 
-        $result = mysqli_query($con,"SELECT u.username,u.user_avatar FROM user u WHERE u.id = $id_session ");
+        $result = mysqli_query($con,"SELECT u.username,u.user_avatar FROM user u WHERE u.id = $id_session");
          if (!$result) {
          die("Database query failed: " . mysqli_error());
          }
