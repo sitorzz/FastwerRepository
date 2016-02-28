@@ -1,10 +1,5 @@
 <?php 
-session_start();
-/*session is started if you don't write this line can't use $_Session  global variable*/
-$id=$_SESSION["id"];
-/*session created*/
-echo $_SESSION["id"];
-/*session was getting*/
+include "php/session.php";
 ?>
 
 
@@ -69,7 +64,7 @@ echo $_SESSION["id"];
                         <a href="#">Soporte</a>
                     </li>
                     <li>
-                        <a href="#">Mi perfil</a>
+                        <a href="profile.php">Mi perfil</a>
                     </li>
                     <li>
                         <a href="php/logout.php">Cerrar sesión</a>
@@ -92,8 +87,10 @@ echo $_SESSION["id"];
             <!-- /.col-md-8 -->
             <div class="col-md-4">
                 <h1>Visualizar</h1>
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum</p>
-                <a class="btn btn-primary btn-lg" href="alta_pregunta.php">Alta pregunta!</a>
+                <p>¿Tienes muchas preguntas y nadie de tu alrededor sabe la respuesta? </p>
+                <p>Fastwer es tu solución! Haz click en Alta Pregunta y sube todas las dudas que tengas. </p>
+                <p>Puedes optar por dos tipos de respuesta, la rápida es de (si o no) o la larga es que tu decides tres posibles respuestas</p>
+                <a class="btn btn-primary btn-lg" href="add_question.php">Alta pregunta!</a>
             </div>
             <!-- /.col-md-4 -->
         </div>
