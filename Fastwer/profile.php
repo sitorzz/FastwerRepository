@@ -112,7 +112,36 @@ include "php/session.php"
       
          $con->close();
       ?> 
+          
 </div>
+      <div class="row">
+        <?php
+
+            include "php/conexion.php";
+
+
+                $consulta_mysql="select * from question where fk_user = $id_session order by date_create LIMIT 20";
+
+                $resultado_consulta_mysql=mysqli_query($con,$consulta_mysql);
+        
+                
+                
+                while ($row = mysqli_fetch_array($resultado_consulta_mysql)) {
+
+                 echo'
+             
+                    
+                    <div class="col-xs-6 col-md-12">
+                    <p>hola</p>
+                    <h2>'. $row['title'] .'</h2><p>' .$row['question'] . '
+
+                    <a class="btn btn-default" href="#">Visualizar pregunta...</a></p>
+                    </div> 
+                    ';
+                }
+                $con->close;
+         ?>
+        </div>
     </div>
     <footer id="footer">
         <div class="container">
