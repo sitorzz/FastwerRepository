@@ -1,7 +1,7 @@
 <?php 
 session_start();
 /*session is started if you don't write this line can't use $_Session  global variable*/
-$_SESSION["id"]=$id;
+$id=$_SESSION["id"];
 /*session created*/
 echo $_SESSION["id"];
 /*session was getting*/
@@ -57,6 +57,7 @@ echo $_SESSION["id"];
         <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
             <ul class="nav navbar-nav">
                 <li>
+<<<<<<< HEAD
                         <a href="#">Visualizar</a>
                     </li>
                     <li>
@@ -71,6 +72,22 @@ echo $_SESSION["id"];
                     <li>
                         <a href="profile.php">Mi perfil</a>
                     </li>
+=======
+                    <a href="#">Visualizar</a>
+                </li>
+                <li>
+                    <a href="#">Nueva Pregunta</a>
+                </li>
+                <li>
+                    <a href="myFriends.php">Amigos</a>
+                </li>
+                <li>
+                    <a href="#">Soporte</a>
+                </li>
+                <li>
+                    <a href="#">Mi perfil</a>
+                </li>
+>>>>>>> master
                 <li>
                 <a href="php/logout.php">Cerrar Sesión</a>
                 </li>
