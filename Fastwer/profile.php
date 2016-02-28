@@ -120,14 +120,14 @@ include "php/session.php"
             include "php/conexion.php";
 
 
-                $consulta_mysql="select * from question where fk_user = $id_session order by date_create LIMIT 20";
+                $consulta_mysql="select * from question where fk_user = $id_session";
 
                 $resultado_consulta_mysql=mysqli_query($con,$consulta_mysql);
         
                 
                 
                 while ($row = mysqli_fetch_array($resultado_consulta_mysql)) {
-
+               
                  echo'
              
                     
