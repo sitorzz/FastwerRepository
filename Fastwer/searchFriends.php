@@ -107,7 +107,8 @@ include "php/session.php";
      
         include 'php/conexion.php';
        
-        $result = mysqli_query($con,"SELECT u.username, u.user_avatar, u.id FROM user u WHERE u.username LIKE '%".$friends."%' AND u.id !='".$id_session."' ORDER BY u.username");
+        $result = mysqli_query($con,"SELECT u.username, u.user_avatar, u.id FROM user u WHERE u.username LIKE '%".$friends."%' AND u.id !='".$id_session."' 
+        AND u.id != (SELECT id_friend from friends where id_user='1') ORDER BY u.username");
          if (!$result) {
          die("Database query failed: " . mysqli_error());
          }

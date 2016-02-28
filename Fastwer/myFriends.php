@@ -82,7 +82,6 @@ include "php/session.php";
     <!-- Page Content -->
     <div class="container">
 
-
                 <!-- Texto informativo -->
         <div class="row">
             <div class="col-lg-12">
