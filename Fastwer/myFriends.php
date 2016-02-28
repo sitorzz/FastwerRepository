@@ -55,24 +55,27 @@ include "php/session.php";
             <!-- Collect the nav links, forms, and other content for toggling -->
             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                 <ul class="nav navbar-nav">
+                    
                     <li>
-                        <a href="#">Visualizar</a>
+                        <a href="home.php">Visualizar</a>
                     </li>
                     <li>
-                        <a href="#">Nueva Pregunta</a>
+                        <a href="add_question.php">Nueva Pregunta</a>
                     </li>
                     <li>
-                        <a href="#">Amigos</a>
+                        <a href="myFriends.php">Amigos</a>
                     </li>
                     <li>
                         <a href="#">Soporte</a>
                     </li>
                     <li>
                         <a href="#">Mi perfil</a>
-                    </li>                    
+                    </li>
+                    
                     <li>
                         <a href="php/logout.php">Cerrar sesión</a>
                     </li>
+
                 </ul>
             </div>
             <!-- /.navbar-collapse -->
