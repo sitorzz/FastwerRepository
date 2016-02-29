@@ -194,19 +194,19 @@ include "php/session.php";
 
         				$insertRespComp="insert into question(title,question,votes,image_question,date_create,fk_user,is_simple, views) values('$tituloPregun','$textoPregun',0,'$imagenPregun', NOW(),1,'n',0)";
 
-		                if ($connect->query($insertRespComp) === TRUE) {
+		                if ($con->query($insertRespComp) === TRUE) {
 
 						$selectPk="select id_question from question where question='$textoPregun'";
-						$resultado_consulta_mysql = mysqli_query($connect, $selectPk);
+						$resultado_consulta_mysql = mysqli_query($con, $selectPk);
 
 					    while ($row = mysqli_fetch_array($resultado_consulta_mysql)) {
 						
 	        			$insertRespost="insert into answer(fk_question,answer) values ('$row[0]','$respuesta1')";
 	        			$insertRespost2="insert into answer(fk_question,answer) values ('$row[0]','$respuesta2')";
 	        			$insertRespost3="insert into answer(fk_question,answer) values ('$row[0]','$respuesta3')";
-	        			$connect->query($insertRespost);
-	        			$connect->query($insertRespost2);
-	        			$connect->query($insertRespost3);
+	        			$con->query($insertRespost);
+	        			$con->query($insertRespost2);
+	        			$con->query($insertRespost3);
 		                }
 
         		}
