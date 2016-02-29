@@ -1,6 +1,12 @@
 <?php
 
+<<<<<<< HEAD
 			include "conexion.php";            
+=======
+			include "conexion.php";
+            
+
+>>>>>>> refs/remotes/origin/master
 
 			$user_id = 0;
 			$id;

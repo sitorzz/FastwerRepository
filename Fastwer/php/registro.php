@@ -12,6 +12,7 @@ if($_POST["password"]==$_POST["confirm_password"]){
     echo $_POST["username"];
     echo $_POST["password"];
     echo $_POST["email"];
+    
 			if ($result->num_rows > 0) {
 
 				while ($row = $result->fetch_assoc()) {
@@ -21,7 +22,6 @@ if($_POST["password"]==$_POST["confirm_password"]){
 
 					$id = $row["id"];
                     
-					echo "bucleaso".$id.$user_id;
 					break;
 
 				}
@@ -34,7 +34,7 @@ if($_POST["password"]==$_POST["confirm_password"]){
 
             if($found==0) {
                 
-            $sql = "insert into user (id,username,password,email,user_avatar,user_state,user_first_log) value (NULL,'".$_POST['username']."','".$_POST['password']."','".$_POST['email']."',NULL,NULL, NOW())";
+            $sql = "insert into user (id,username,password,email,user_avatar,user_state,user_first_log) value (NULL,'".$_POST['username']."','".$_POST['password']."','".$_POST['email']."','images/foto_perfil.jpg',NULL, NOW())";
                 
             $query1 = $con->query($sql);
                 
@@ -54,4 +54,5 @@ else {
     
      print "<script>alert(\"Las password no coinciden, vuelva a intentarlo\");window.location='../index.php';</script>";
 }
+
 ?>
