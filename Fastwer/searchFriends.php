@@ -37,7 +37,7 @@ include "php/session.php";
 <body>
 
     <!-- Navigation -->
-    <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+     <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
         <div class="container">
             <!-- Brand and toggle get grouped for better mobile display -->
             <div class="navbar-header">
@@ -55,20 +55,20 @@ include "php/session.php";
             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                 <ul class="nav navbar-nav">
                     <li>
-                        <a href="#">Visualizar</a>
+                        <a href="home.php">Visualizar</a>
                     </li>
                     <li>
-                        <a href="#">Nueva Pregunta</a>
+                        <a href="add_question.php">Nueva Pregunta</a>
                     </li>
                     <li>
-                        <a href="#">Amigos</a>
+                        <a href="myFriends.php">Amigos</a>
                     </li>
                     <li>
                         <a href="#">Soporte</a>
                     </li>
                     <li>
-                        <a href="#">Mi perfil</a>
-                    </li>                    
+                        <a href="profile.php">Mi perfil</a>
+                    </li>
                     <li>
                         <a href="php/logout.php">Cerrar sesión</a>
                     </li>
@@ -77,6 +77,7 @@ include "php/session.php";
             <!-- /.navbar-collapse -->
         </div>
         <!-- /.container -->
+    </nav>
     </nav>
 
     <!-- Page Content -->
