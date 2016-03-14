@@ -118,7 +118,7 @@ include "php/session.php";
 
         include 'php/conexion.php';
 
-        $result = mysqli_query($con,"SELECT u.username,u.user_avatar FROM friends f, user u WHERE u.id = f.id_friend AND f.id_user='26' ORDER BY u.username");
+        $result = mysqli_query($con,"SELECT u.username,u.user_avatar FROM friends f, user u WHERE u.id = f.id_friend AND f.id_user='".$id_session."' ORDER BY u.username");
          if (!$result) {
          die("Database query failed: " . mysqli_error());
          }
