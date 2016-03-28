@@ -102,7 +102,7 @@ include "php/session.php";
 
             <h>Buscar amigo:</h>
 
-            <input type="text" name="nameFriend" placeholder="nombre">
+            <input type="text" name="nameFriend" placeholder="nombre" required>
 
             <input type="submit" name="submit" value="Buscar" class="btn btn-default">
             
