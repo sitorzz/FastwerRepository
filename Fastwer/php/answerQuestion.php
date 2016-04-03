@@ -12,17 +12,13 @@ $responder = "insert into user_answer values (".$resultados[0].",".$id_session."
 
 $con->query($responder);
 
+//header ("Location: ../visualizeQuestion.php?id_pregunta=$resultados[1]"); 
 
+echo '<script language="javascript">alert("Pregunta respondida correctamentes");</script>'; 
 
-//header ("Location: ../visualizeQuestion.php"); 
-
-header ("Location: ../visualizeQuestion.php?id_pregunta=$resultados[1]"); 
-
-//header ("Location: ../home.php"); 
-
-
-//echo '<meta http-equiv="refresh" content="1;URL=../visualizeQuestion.php" /> ';
-//header ("Location: ../visualizeQuestion.php"); 
+print "<script>window.location='../visualizeQuestion.php?id_pregunta=$resultados[1]';</script>";
 
 
 ?> 
+
+
