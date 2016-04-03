@@ -228,7 +228,7 @@ include "php/session.php";
         	}
         }
 
-        $con->close;
+        $con->close();
         	?>
 
 
