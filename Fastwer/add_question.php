@@ -221,8 +221,10 @@ include "php/session.php";
 	        			$con->query($insertRespost2);
 	        			$con->query($insertRespost3);
 		                }
-
-        		}
+                        echo "<script type='text/javascript'>document.getElementById('respCorrecta').style.display = 'inline';</script>";
+        		}else{
+                    echo "<script type='text/javascript'>document.getElementById('respIncorrecta').style.display = 'inline';</script>";
+                }
         	}
         }
 
