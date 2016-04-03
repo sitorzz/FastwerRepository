@@ -108,7 +108,7 @@ include "php/session.php";
      
         include 'php/conexion.php';
 
-        $result = mysqli_query($con,"select q.id_question,q.title, q.question,q.views,q.date_create FROM friends f, user u, question q WHERE u.id = f.id_friend AND f.id_user='".$id_session."'");
+        $result = mysqli_query($con,"select q.id_question,q.title, q.question,q.views,q.date_create FROM friends f, user u, question q WHERE u.id = f.id_friend AND f.id_user='".$id_session."' GROUP BY q.id_question");
        
 
          if (!$result) {
