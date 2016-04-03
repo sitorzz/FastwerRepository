@@ -11,9 +11,5 @@ if($con -> connect_error){
     die("Conexion fallida" . $con -> connect_error);
 
 }
-else{
 
-    echo "conecta:";
-
-}
 ?>

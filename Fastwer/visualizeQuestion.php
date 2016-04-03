@@ -93,9 +93,11 @@ include "php/session.php";
 
     <?php
 
-        include 'php/conexion.php';
-            
-        $id_pregunta = $_GET['id_pregunta'];
+        
+        include 'php/conexion.php';        
+     
+        //$_SESSION["pregunta"] = $_GET['id_pregunta'];
+        $id_pregunta = $_GET['id_pregunta'];        
 
         $resultQuestion = mysqli_query($con,"select * from question WHERE id_question = ".$id_pregunta."");
 
@@ -138,7 +140,7 @@ include "php/session.php";
             
             
             echo '<div class="row rowFriend">
-                    <input type="radio" value="'.$row[0].'" name="respuesta">'.$row[2].' - '.$numVotos.' votos</input>                    
+                    <input type="radio" value="'.$row[0].';'.$row[1].'" name="respuesta">'.$row[2].' - '.$numVotos.' votos</input>                    
                   </div> ';
 
         }
