@@ -91,27 +91,26 @@ include "php/session.php"
              
          echo ' 
                 <h3>'.$row[0].'</h3>
-                
-               
-                        <img class = "img-circle" src="'.$row[1].'" style="width:300px;height:250px;/>       
+                <img class = "img-circle" src="'.$row[1].'" style="width:300px;height:250px;/>
           ';
          }
       
          $con->close();
       ?> 
               
-        <form role="form" name="upload" action="php/upload.php" method="post">
-            
-            <div class="form-group" align="center"> 
-                <label for="cfdp">Cambiar foto de Perfil</label>
-                <input type="file" name="fileToUpload" id="fileToUpload">
-                <button type="submit" class="btn btn-default" value="Upload Image" name="submit">Submit</button>
-                
-            </div>
-                
-        </form>
-                   
-            </div>
+       
+              </div>
+    
+    <div class="container jumbotron text-center col-sm-6">
+           
+            <form action="php/upload.php" method="post" enctype="multipart/form-data">
+            <p>Select image to upload:</p>
+            <input type="file" name="fileToUpload" id="fileToUpload"/>
+            <input type="submit" value="Upload Image" name="submit"/>
+
+         </form>
+    </div>               
+          
      <!--
 
        <---?php
