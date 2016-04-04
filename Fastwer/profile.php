@@ -18,16 +18,11 @@ include "php/session.php"
 
     <!-- Bootstrap Core CSS -->
     <link href="css/bootstrap.css" rel="stylesheet">
+    <link href="css/bootstrap.css" rel="stylesheet">
+    <link href="css/friends.css" rel="stylesheet">
 
     <!-- Custom CSS -->
     <link href="css/small-business.css" rel="stylesheet">
-
-    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
-    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
-    <!--[if lt IE 9]>
-        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
-        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
-    <![endif]-->
 
 </head>
 
@@ -77,14 +72,11 @@ include "php/session.php"
         </div>
         <!-- /.container -->
     </nav>
-  
-
-
-
 
   <!-- Wrapper for slides -->
-  <div class="row">
-      <div class="text-center">
+  
+  
+     <div class="container rowFriend text-center col-xs-12">
         <?php
 
         include 'php/conexion.php';
@@ -97,25 +89,31 @@ include "php/session.php"
                   
          while ($row = mysqli_fetch_array($result)) {
              
-         echo '<div class="row">
-                <div class="col-xs-12" >
+         echo ' 
                 <h3>'.$row[0].'</h3>
-                
-                    <div class="imageContainer">
-                        <img src="'.$row[1].'" style="width:300px;height:250px;/>
-                    </div>  
-                    
-                    
-                </div>
-            </div>';
+                <img class = "img-circle" src="'.$row[1].'" style="width:300px;height:250px;/>
+          ';
          }
       
          $con->close();
       ?> 
+              
+       
+              </div>
+    
+    <div class="container jumbotron text-center col-sm-6">
+           
+            <form action="php/upload.php" method="post" enctype="multipart/form-data">
+            <p>Select image to upload:</p>
+            <input type="file" name="fileToUpload" id="fileToUpload"/>
+            <input type="submit" value="Upload Image" name="submit"/>
+
+         </form>
+    </div>               
           
-</div>
-      <div class="row">
-        <?php
+     <!--
+
+       <---?php
 
             include "php/conexion.php";
 
@@ -129,7 +127,7 @@ include "php/session.php"
                  echo'
                     <div class="col-xs-6 col-md-12">
                     <p>hola</p>
-                    <h2>'. $row['title'] .'</h2><p>' .$row['question'] . '
+                    <h2>'.$row['title'] .'</h2><p>' .$row['question'] .'
 
                     <a class="btn btn-default" href="#">Visualizar pregunta...</a></p>
                     </div> 
@@ -137,8 +135,7 @@ include "php/session.php"
                 }
                 $con->close;
          ?>
-        </div>
-    </div>
+        -->
     <footer id="footer">
         <div class="container">
             <div class="row">

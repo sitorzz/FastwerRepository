@@ -189,7 +189,7 @@
 
 		  <button type="submit" class="btn btn-default" name="registro">Registrar</button>
 		</form>
-          </form>
+          
       </div>
   </div> 
 </div>
