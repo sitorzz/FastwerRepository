@@ -191,7 +191,7 @@ include "php/session.php";
                   </form>
               </div>';
         } else {
-                    echo '<br/>
+                    echo '    <input type="submit" name="modificar" id="submit" value="Modificar respuesta"/> <br/>
                   </form>
               </div>';
         }
