@@ -1,0 +1,14 @@
+.imageQuestion{
+    
+    width: 200px;
+    height: 200px;   
+    float: left;
+    margin-right: 15px;    
+    margin-bottom: 20px;
+    
+}
+
+.float{
+        
+    float:right;
+}

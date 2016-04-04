@@ -1,0 +1,12 @@
+#respCorrecta{
+    
+    display : none;
+}
+
+#respIncorrecta{
+    display: none;
+    color: red;
+}
+
+
+

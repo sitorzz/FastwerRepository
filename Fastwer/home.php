@@ -152,11 +152,22 @@ include "php/session.php";
                     <div class="col-xs-6">
                     <h2>'. $row['title'] .'</h2><p>' .$row['question'] . '
 
-                    <a class="btn btn-default" href="#"">Responder pregunta...</a></p>
+                    <a class="btn btn-default" href="visualizeQuestion.php?id_pregunta='.$row[0].'">Responder pregunta...</a></p>
+                    
                     </div> 
                     ';
+                                        
+                    //$_SESSION["pregunta"] = $row[0];
+                    //<a class="btn btn-default" href="visualizeQuestion.php?id_pregunta='.$row[0].'">Responder pregunta...</a></p>
+                    //<a class="btn btn-default" name="visualizar" href="">Responder pregunta...</a></p>
+                    //<a class="btn btn-default" href="visualizeQuestion.php">Responder pregunta...</a></p>
+                    
+
+                    
                 }
-                $con->close;
+            
+            
+                $con->close();
          ?>
         </div>
 

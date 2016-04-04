@@ -20,6 +20,7 @@ include "php/session.php";
 
     <!-- Custom CSS -->
     <link href="css/small-business.css" rel="stylesheet">
+    <link href="css/addquestion.css" rel="stylesheet">
 
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -80,6 +81,12 @@ include "php/session.php";
 
         <!-- Heading Row -->
         <div class="row">
+            <div class="col-xs-12" id="respCorrecta">
+                <p>Pregunta añadida correctamente</p>
+            </div>
+            <div class="col-xs-12" id="respIncorrecta">
+                <p>No ha sido possible añadir la pregunta, intentelo de nuevo porfavor.</p>
+            </div>
             <div class="col-xs-12">
                 <img class="img-responsive img-rounded" src="http://placehold.it/1250x150" alt="">
             </div>
@@ -116,24 +123,31 @@ include "php/session.php";
 
               </br>
 
-              <div class="form-group col-xs-2">
-              	<label>Tipo simple: (Si/No)  </label>
+              <div class="form-group col-xs-12">
+              <h2>Elige el tipo de respuesta a tu pregunta:</h2>
+              </div>
+
+              <div class="form-group col-xs-12">
+                <label>Tipo de respuesta: Si o No?</label>
                 <input type="checkbox" name="respuestaSimpl">
               </div>
-              <div class="form-group col-xs-10">
-              <p>(En caso de no ser simple el tipo de respuesta que quieres, rellena los campos con las possibles respuestas)</p>
+
+              <div class="form-group col-xs-12">
+              <p><i>(En caso de no ser Si o No el tipo de respuesta que quieres, rellena los campos con las possibles respuestas)</i></p>
               </div>
+
+            
               <div class="form-group col-md-4">
                 <label>Respuesta 1:</label>
-                <input type="textarea" class="form-control" placeholder="Respuesta 1" name="Resp1">
+                <input type="textarea" class="form-control" placeholder="Escribe tu opcion 1" name="Resp1">
               </div>
               <div class="form-group col-md-4">
                 <label>Respuesta 2:</label>
-                <input type="textarea" class="form-control" placeholder="Respuesta 2" name="Resp2">
+                <input type="textarea" class="form-control" placeholder="Escribe tu opcion 2" name="Resp2">
               </div>
               <div class="form-group col-md-4">
                 <label>Respuesta 3:</label>
-                <input type="textarea" class="form-control" placeholder="Respuesta 3" name="Resp3">
+                <input type="textarea" class="form-control" placeholder="Escribe tu opcion 3" name="Resp3">
               </div>
 
               <div class="form-group col-xs-12">
@@ -176,17 +190,16 @@ include "php/session.php";
 
 	        			}
 
-		                echo "<div class='col-xs-12'>
-		                		<p>Insert correcto</p>
-		                		</div>";
+		                
+                            echo "<script type='text/javascript'>document.getElementById('respCorrecta').style.display = 'inline';</script>";
 
 		            } else {
 		                
 		               
 
-		                echo "<div class='col-xs-12'>
-		                		<p>Insert incorrecto</p>
-		                		</div>";
+		               
+
+                                echo "<script type='text/javascript'>document.getElementById('respIncorrecta').style.display = 'inline';</script>";
 		            }
 
 
@@ -208,12 +221,14 @@ include "php/session.php";
 	        			$con->query($insertRespost2);
 	        			$con->query($insertRespost3);
 		                }
-
-        		}
+                        echo "<script type='text/javascript'>document.getElementById('respCorrecta').style.display = 'inline';</script>";
+        		}else{
+                    echo "<script type='text/javascript'>document.getElementById('respIncorrecta').style.display = 'inline';</script>";
+                }
         	}
         }
 
-        $con->close;
+        $con->close();
         	?>
 
 
@@ -244,6 +259,9 @@ include "php/session.php";
 
     <!-- Bootstrap Core JavaScript -->
     <script src="js/bootstrap.min.js"></script>
+    
+    <!-- Ponerlo en un archivo diferente-->
+
 
 </body>
 
