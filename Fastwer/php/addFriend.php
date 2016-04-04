@@ -9,7 +9,7 @@ $result = "INSERT into friends VALUES (".$id_session.",".$identificador.")";
 
 $con->query($result);
 
-$con->close;
+$con->close();
     
 header('Location: ../myFriends.php');
 
