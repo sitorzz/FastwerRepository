@@ -34,48 +34,12 @@ include "php/session.php";
 
 <body>
 
-    <!-- Navigation -->
-    <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
-        <div class="container">
-            <!-- Brand and toggle get grouped for better mobile display -->
-            <div class="navbar-header">
-                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
-                    <span class="sr-only">Toggle navigation</span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                </button>
-                <a class="navbar-brand" href="#">
-                    <img src="http://placehold.it/150x50&text=Logo" alt="">
-                </a>
-            </div>
-            <!-- Collect the nav links, forms, and other content for toggling -->
-            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-                <ul class="nav navbar-nav">
-                    <li>
-                        <a href="home.php">Visualizar</a>
-                    </li>
-                    <li>
-                        <a href="add_question.php">Nueva Pregunta</a>
-                    </li>
-                    <li>
-                        <a href="myFriends.php">Amigos</a>
-                    </li>
-                    <li>
-                        <a href="#">Soporte</a>
-                    </li>
-                    <li>
-                        <a href="profile.php">Mi perfil</a>
-                    </li>
-                    <li>
-                        <a href="php/logout.php">Cerrar sesión</a>
-                    </li>
-                </ul>
-            </div>
-            <!-- /.navbar-collapse -->
-        </div>
-        <!-- /.container -->
-    </nav>
+
+    <?php
+    
+        include "nav.php";
+    
+    ?>
 
     <!-- Page Content -->
     <div class="container">
@@ -92,16 +56,17 @@ include "php/session.php";
         
         
         
-    <form name="frmContacto" method="post" action="php/mailSoporte.php">
+    <form name="frmContacto" method="post" action="">
+    <!--<form name="frmContacto" method="post" action="php/mailSoporte.php">-->
         
-    <label for="first_name" class="soporte">Nombre: </label>
-    <input type="text" name="first_name" maxlength="50" size="25" required><br>
+    <label for="first_name" class="soporte">Nombre: </label><br>
+    <input type="text" name="first_name" maxlength="50" size="25" required><br><br>
 
-    <label for="email" class="soporte">E-mail: </label>
-    <input type="text" name="email" maxlength="80" size="35" required><br>
+    <label for="email" class="soporte">E-mail: </label><br>
+    <input type="text" name="email" maxlength="80" size="35" required><br><br>
 
-    <label class="soporte">Comentarios: </label>
-    <textarea name="comments" maxlength="500" cols="30" rows="5" required></textarea><br>
+    <label class="soporte">Comentarios: </label><br>
+    <textarea name="comments" maxlength="500" cols="70" rows="5" required></textarea><br><br>
 
     <input type="submit" value="Enviar">
 
