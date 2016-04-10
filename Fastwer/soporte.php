@@ -59,21 +59,30 @@ include "php/session.php";
         
         
         
-    <form name="frmContacto" method="post" action="">
-    <!--<form name="frmContacto" method="post" action="php/mailSoporte.php">-->
+    <div class="">
         
-    <label for="first_name" class="soporte">Nombre: </label><br>
-    <input type="text" name="first_name" maxlength="50" size="25" required><br><br>
+        <form name="frmContacto" method="post" action="">
+        <!--<form name="frmContacto" method="post" action="php/mailSoporte.php">-->
 
-    <label for="email" class="soporte">E-mail: </label><br>
-    <input type="text" name="email" maxlength="80" size="35" required><br><br>
+        <div class="form-group">
+        <label for="first_name" class="soporte">Nombre: </label>
+        <input class="form-control" type="text" name="first_name" maxlength="50" size="25" required>
+        </div>
+            
+        <div class="form-group">
+        <label for="email" class="soporte">E-mail: </label>
+        <input class="form-control" type="text" name="email" maxlength="80" size="35" required>
+        </div>
+            
+        <div class="form-group">
+        <label for="comments" class="soporte">Comentarios: </label>
+        <textarea class="form-control" name="comments" maxlength="500" cols="70" rows="5" required></textarea>
+        </div>
 
-    <label class="soporte">Comentarios: </label><br>
-    <textarea name="comments" maxlength="500" cols="70" rows="5" required></textarea><br><br>
-
-    <input type="submit" value="Enviar">
-
-    </form>
+        <input class="btn btn-primary btn-lg" type="submit" value="Enviar">
+        </form>
+        
+    </div>    
 
 
         <!-- Footer -->
