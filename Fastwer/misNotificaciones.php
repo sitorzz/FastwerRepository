@@ -50,7 +50,7 @@ include "php/session.php";
         <div class="row">
             <div class="col-lg-12">
                 <div class="well text-center">
-                    Mis notificaciones
+                    <b>Mis notificaciones:</b> Últimas preguntas de tus amigos/amigas
                 </div>
             </div>            
         </div>   
@@ -86,9 +86,9 @@ include "php/session.php";
                     
 
 
-                    <div class="col-xs-4">
+                    <div class="col-xs-6" id="questionDi">
                     <p><i>(Pregunta echa por tu amigo/amiga: '.$row2['username'].')</i></p>
-                    <h2>'. $row['title'] .'</h2><p>' .$row['question'] . '
+                    <h2>'. $row['title'] .'</h2>
 
                     <a class="btn btn-default" href="visualizeQuestion.php?id_pregunta='.$row[0].'">Responder pregunta...</a></p>
                     
