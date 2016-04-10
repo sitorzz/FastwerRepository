@@ -139,63 +139,73 @@
     
     
 <div class="container col-md-12">
-  <div class="panel-group" id="accordion">
+<div class="panel-group" id="accordion">
     <div class="panel panel-default">
-      <div class="panel-heading">
-        <h4 class="panel-title">
-          <a data-toggle="collapse" data-parent="#accordion" href="#collapse1">Login</a>
-        </h4>
-      </div>
+        <div class="panel-heading">
+            <h4 class="panel-title">
+            <a data-toggle="collapse" data-parent="#accordion" href="#collapse1">Login</a>
+            </h4>
+        </div>
         <div id="collapse1" class="panel-collapse collapse in">
-             <div class="panel-body">
-		<form role="form" name="login" action="php/login.php" method="post">
+            <div class="panel-body">
+                
+                <form role="form" name="login" action="php/login.php" method="post">
 
-		    <label for="username">Nombre de usuario o email</label>
-		    <input type="text" class="form-control" id="username2" name="username2" placeholder="Nombre de usuario" required>
+                <div class="form-group">
+                <label for="username">Nombre de usuario o email</label>
+                <input type="text" class="form-control" id="username2" name="username2" placeholder="Nombre de usuario" required>
+                </div>
 
-		    <label for="password">Contrase&ntilde;a</label>
-		    <input type="password" class="form-control" id="password2" name="password2" placeholder="Contrase&ntilde;a" required>
+                <div class="form-group">
+                <label for="password">Contrase&ntilde;a</label>
+                <input type="password" class="form-control" id="password2" name="password2" placeholder="Contrase&ntilde;a" required>
+                </div>
 
-
-		  <button type="submit" class="btn btn-default" name="login">Acceder</button>
-		</form>
+                <button type="submit" class="btn btn-default" name="login">Acceder</button>
+                </form>
             </div>
-      </div>
+        </div>
     </div>
 
 
-  <div class="panel panel-default">
-      <div class="panel-heading">
-        <h4 class="panel-title">
-          <a data-toggle="collapse" data-parent="#accordion" href="#collapse2">Registro</a>
-        </h4>
-      </div>
-      
-      <div id="collapse2" class="panel-collapse collapse">
-		<form role="form" name="registro" action="php/registro.php" method="post">
-		 <div class="panel-body">
-		    <label for="username">Nombre de usuario</label>
-		    <input type="text" class="form-control" id="username" name="username" placeholder="Nombre de usuario" PATTERN = "[a-zA-Z0-9_-]{3,15}$" title="Debe contener de 3 a 15 caracteres sin signos de puntuación, ni caracteres especiales" required>
-		  
-		 
-		    <label for="email">Correo Electronico</label>
-		    <input type="email" class="form-control" id="email" name="email" placeholder="Correo Electronico" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,3}$" required>
-		  
-		
-		    <label for="password">Contrase&ntilde;a</label>
-		    <input type="password" class="form-control" id="password" name="password" placeholder="Contrase&ntilde;a" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{5,}" title="Debe contener una mayúscula, una minuscula, un número y más de 5 caracteres por su seguridad" required>
-		  
-	
-		    <label for="confirm_password">Confirmar Contrase&ntilde;a</label>
-		    <input type="password" class="form-control" id="confirm_password" name="confirm_password" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{5,}" title="Debe contener una mayúscula, una minuscula, un número y más de 5 caracteres por su seguridad" placeholder="Confirmar Contrase&ntilde;a" required>
-		  
+    <div class="panel panel-default">
 
-		  <button type="submit" class="btn btn-default" name="registro">Registrar</button>
-		</form>
-          
-      </div>
-  </div> 
-</div>
+        <div class="panel-heading">
+            <h4 class="panel-title">
+            <a data-toggle="collapse" data-parent="#accordion" href="#collapse2">Registro</a>
+            </h4>
+        </div>
+
+        <div id="collapse2" class="panel-collapse collapse">
+            <div class="panel-body">
+                <form role="form" name="registro" action="php/registro.php" method="post">	
+                    
+                <div class="form-group">
+                <label for="username">Nombre de usuario</label>
+                <input type="text" class="form-control" id="username" name="username" placeholder="Nombre de usuario" PATTERN = "[a-zA-Z0-9_-]{3,15}$" title="Debe contener de 3 a 15 caracteres sin signos de puntuación, ni caracteres especiales" required>
+                </div>
+
+                <div class="form-group">
+                <label for="email">Correo Electronico</label>
+                <input type="email" class="form-control" id="email" name="email" placeholder="Correo Electronico" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,3}$" required>
+                </div>
+
+                <div class="form-group">
+                <label for="password">Contrase&ntilde;a</label>
+                <input type="password" class="form-control" id="password" name="password" placeholder="Contrase&ntilde;a" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{5,}" title="Debe contener una mayúscula, una minuscula, un número y más de 5 caracteres por su seguridad" required>
+                </div>
+
+                <div class="form-group">
+                <label for="confirm_password">Confirmar Contrase&ntilde;a</label>
+                <input type="password" class="form-control" id="confirm_password" name="confirm_password" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{5,}" title="Debe contener una mayúscula, una minuscula, un número y más de 5 caracteres por su seguridad" placeholder="Confirmar Contrase&ntilde;a" required>
+                </div>
+
+                <button type="submit" class="btn btn-default" name="registro">Registrar</button>
+                </form>
+            </div>
+        </div> 
+
+    </div>
 </div>
         
 

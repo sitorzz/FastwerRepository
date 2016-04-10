@@ -84,7 +84,7 @@ include "php/session.php";
                 <input type="text" class="form-control" placeholder="Texto pregunta" name=textoPreg required/>
               </div>
 
-              </br>
+              <br>
 
               <div class="form-group col-xs-12">
               <h2>Elige el tipo de respuesta a tu pregunta:</h2>
@@ -114,15 +114,10 @@ include "php/session.php";
               </div>
 
               <div class="form-group col-xs-12">
-                 <input type="submit" class="btn btn-default" name="submit"/></input>
+                 <input class="btn btn-primary btn-lg" type="submit" class="btn btn-default" name="submit"/>
               </div>
 
-
-          </form>
-
-           	
-
-
+          </form>  
 
         </div>
         <!-- /.row -->
