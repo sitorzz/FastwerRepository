@@ -34,7 +34,6 @@ include "php/session.php";
 
 <body>
 
-
     <?php
     
         include "nav.php";
@@ -51,7 +50,11 @@ include "php/session.php";
                 <div class="well text-center">
                     CONTACTO CON EL SOPORTE
                 </div>
-            </div>            
+            </div>  
+            
+            <div class="col-xs-12">   
+                <p>Contáctenos para que podamos resolver cualquier duda o problema con nuestro servicio, le contestaremos a la mayor brevedad posible. <br>Envíenos todo tipo de sugerencias para que podamos mejorar nuestra plataforma. Reporte usuarios, preguntas y cualquier problema que tenga con nuestra plataforma o cualquier usuario de ella en sus diferentes dispositivos.</p>
+            </div>
         </div>   
         
         
