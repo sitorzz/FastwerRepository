@@ -21,7 +21,8 @@ if(isset($_POST['submit']))
     $con->query($responder);
 
 
-    header ("Location: ../visualizeQuestion.php?id_pregunta=$id_pregunta"); 
+    //header ("Location: ../visualizeQuestion.php?id_pregunta=$id_pregunta"); 
+    print "<script>window.location='../visualizeQuestion.php?id_pregunta=$id_pregunta';</script>";
     
 } else if(isset($_POST['modificar'])) {
     
@@ -34,7 +35,8 @@ if(isset($_POST['submit']))
 
     $con->query($responder);
                     
-    header ("Location: ../visualizeQuestion.php?id_pregunta=$id_pregunta"); 
+    //header ("Location: ../visualizeQuestion.php?id_pregunta=$id_pregunta"); 
+    print "<script>window.location='../visualizeQuestion.php?id_pregunta=$id_pregunta';</script>";
 
     
 }
