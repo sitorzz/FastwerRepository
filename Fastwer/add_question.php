@@ -88,7 +88,7 @@ include "php/session.php";
                 <p>No ha sido possible añadir la pregunta, intentelo de nuevo porfavor.</p>
             </div>
             <div class="col-xs-12">
-                <img class="img-responsive img-rounded" src="http://placehold.it/1250x150" alt="">
+                <img class="img-responsive img-rounded" src="images/add_quest.jpg" alt="">
             </div>
             <!-- /.col-md-8 -->
             <div class="col-xs-12">
@@ -104,7 +104,7 @@ include "php/session.php";
         <!-- Call to Action Well -->
         <div class="row">
            
-           <form method="POST">
+           <form method="POST" action="php/add_question.php" enctype="multipart/form-data">
 
               <div class="form-group col-xs-12">
                 <label>* Titulo pregunta:</label>
@@ -113,7 +113,7 @@ include "php/session.php";
 
               <div class="form-group col-md-6">
                 <label>Imagen (Url):</label>
-                <input type="text" class="form-control" placeholder="Formato jpg,png" name="imagenPreg"/>
+                <input type="file" name="fileToUpload" id="fileToUpload"/>
               </div>
 
               <div class="form-group col-xs-12">
@@ -151,85 +151,13 @@ include "php/session.php";
               </div>
 
               <div class="form-group col-xs-12">
-                 <input type="submit" class="btn btn-default"></input>
+                 <input type="submit" class="btn btn-default" name="submit"/></input>
               </div>
 
 
           </form>
 
-           	<?php
-
-                include "php/conexion.php";
-
-           		if(isset($_POST["titulPreg"])){
-
-        		$tituloPregun = $_POST["titulPreg"];
-        		$imagenPregun = $_POST["imagenPreg"];
-        		$textoPregun = $_POST["textoPreg"];
-        		$respuesta1 = $_POST["Resp1"];
-        		$respuesta2 = $_POST["Resp2"];
-        		$respuesta3 = $_POST["Resp3"];
-
-        		if(isset($_POST["respuestaSimpl"])){
-
-        			$insertRespSimp="insert into question(title,question,votes,image_question,date_create,fk_user,is_simple, views) values('$tituloPregun','$textoPregun',0,'$imagenPregun', NOW(),1,'s',0)";
-
-        			
-        			
-		            if ($con->query($insertRespSimp) === TRUE) {
-
-						$selectPk2="select id_question from question where question='$textoPregun'";
-						$resultado_consulta_mysql2 = mysqli_query($con, $selectPk2);
-
-					    while ($row1 = mysqli_fetch_array($resultado_consulta_mysql2)) {
-
-	        			$insertRespost="insert into answer(fk_question,answer) values ('$row1[0]','Si')";
-	        			$insertRespost2="insert into answer(fk_question,answer) values ('$row1[0]','No')";
-	        			$con->query($insertRespost);
-	        			$con->query($insertRespost2);
-
-	        			}
-
-		                
-                            echo "<script type='text/javascript'>document.getElementById('respCorrecta').style.display = 'inline';</script>";
-
-		            } else {
-		                
-		               
-
-		               
-
-                                echo "<script type='text/javascript'>document.getElementById('respIncorrecta').style.display = 'inline';</script>";
-		            }
-
-
-        		}else{
-
-        				$insertRespComp="insert into question(title,question,votes,image_question,date_create,fk_user,is_simple, views) values('$tituloPregun','$textoPregun',0,'$imagenPregun', NOW(),1,'n',0)";
-
-		                if ($con->query($insertRespComp) === TRUE) {
-
-						$selectPk="select id_question from question where question='$textoPregun'";
-						$resultado_consulta_mysql = mysqli_query($con, $selectPk);
-
-					    while ($row = mysqli_fetch_array($resultado_consulta_mysql)) {
-						
-	        			$insertRespost="insert into answer(fk_question,answer) values ('$row[0]','$respuesta1')";
-	        			$insertRespost2="insert into answer(fk_question,answer) values ('$row[0]','$respuesta2')";
-	        			$insertRespost3="insert into answer(fk_question,answer) values ('$row[0]','$respuesta3')";
-	        			$con->query($insertRespost);
-	        			$con->query($insertRespost2);
-	        			$con->query($insertRespost3);
-		                }
-                        echo "<script type='text/javascript'>document.getElementById('respCorrecta').style.display = 'inline';</script>";
-        		}else{
-                    echo "<script type='text/javascript'>document.getElementById('respIncorrecta').style.display = 'inline';</script>";
-                }
-        	}
-        }
-
-        $con->close();
-        	?>
+           	
 
 
 

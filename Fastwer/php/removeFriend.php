@@ -1,4 +1,4 @@
-<?php
+ <?php
 
 include "session.php";
 include 'conexion.php';
@@ -9,7 +9,7 @@ $result = "DELETE FROM friends where id_friend = ".$identificador."";
 
 $con->query($result);
 
-$con->close;
+$con->close();
   
 header('Location: ../myFriends.php');
 

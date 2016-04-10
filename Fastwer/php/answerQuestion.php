@@ -8,21 +8,40 @@ $valor = $_POST['respuesta'];
 
 $resultados = explode(";", $valor);
 
-$responder = "insert into user_answer values (".$resultados[0].",".$id_session.",NOW())";
-
-$con->query($responder);
-
+$id_respuesta = $resultados[0]; //id de la respuesta
+$id_pregunta = $resultados[1]; //id de la pregunta
 
 
-//header ("Location: ../visualizeQuestion.php"); 
-
-header ("Location: ../visualizeQuestion.php?id_pregunta=$resultados[1]"); 
-
-//header ("Location: ../home.php"); 
+if(isset($_POST['submit']))
+{ 
 
 
-//echo '<meta http-equiv="refresh" content="1;URL=../visualizeQuestion.php" /> ';
-//header ("Location: ../visualizeQuestion.php"); 
+    $responder = "insert into user_answer values (".$id_respuesta.",".$id_session.",NOW())";
 
+    $con->query($responder);
+
+
+    //header ("Location: ../visualizeQuestion.php?id_pregunta=$id_pregunta"); 
+    print "<script>window.location='../visualizeQuestion.php?id_pregunta=$id_pregunta';</script>";
+    
+} else if(isset($_POST['modificar'])) {
+    
+    
+    $responder = "delete from user_answer where pk_fk_id_user = ".$id_session." and pk_fk_answer in (select pk_answer from answer where fk_question = ".$id_pregunta.")";
+    $con->query($responder);
+    
+    
+    $responder = "insert into user_answer values (".$id_respuesta.",".$id_session.",NOW())";
+
+    $con->query($responder);
+                    
+    //header ("Location: ../visualizeQuestion.php?id_pregunta=$id_pregunta"); 
+    print "<script>window.location='../visualizeQuestion.php?id_pregunta=$id_pregunta';</script>";
+
+    
+}
 
 ?> 
+
+
+

@@ -82,7 +82,7 @@ include "php/session.php";
         <!-- Heading Row -->
         <div class="row">
             <div class="col-md-8">
-                <img class="img-responsive img-rounded" src="http://placehold.it/900x350" alt="">
+                <img class="img-responsive img-rounded" src="images/home.jpg" alt="">
             </div>
             <!-- /.col-md-8 -->
             <div class="col-md-4">
@@ -149,10 +149,10 @@ include "php/session.php";
                  echo'
              
 
-                    <div class="col-xs-6">
-                    <h2>'. $row['title'] .'</h2><p>' .$row['question'] . '
+                    <div class="col-xs-4">
+                    <h2>'. $row['title'] .'</h2><p>
 
-                    <a class="btn btn-default" href="visualizeQuestion.php?id_pregunta='.$row[0].'">Responder pregunta...</a></p>
+                    <a class="btn btn-default" href="visualizeQuestion.php?id_pregunta='.$row[0].'">Ver o Responder pregunta...</a></p>
                     
                     </div> 
                     ';

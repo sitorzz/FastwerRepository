@@ -93,11 +93,31 @@ include "php/session.php";
 
     <?php
 
+        include 'php/conexion.php';  
+
+        $id_pregunta = $_GET['id_pregunta']; 
+        $respondido = false;
+        $pregunta_respondida = 0;
+        $checked = true;
+
+
+
+        $queryRespondido ="select a.* from answer a, user_answer u where a.pk_answer = u.pk_fk_answer and u.pk_fk_id_user = ".$id_session." and a.fk_question = ".$id_pregunta." ";
+        $resultRespondido = mysqli_query($con,$queryRespondido);
+
+        if (!$queryRespondido) {
+            die("Database query failed: " . mysqli_error());
+        }
+
+        while ($row3 = mysqli_fetch_array($resultRespondido)) {
+
+            $respondido = true;
+            $pregunta_respondida = $row3[0];
+        }
+
         
-        include 'php/conexion.php';        
+         
      
-        //$_SESSION["pregunta"] = $_GET['id_pregunta'];
-        $id_pregunta = $_GET['id_pregunta'];        
 
         $resultQuestion = mysqli_query($con,"select * from question WHERE id_question = ".$id_pregunta."");
 
@@ -115,6 +135,7 @@ include "php/session.php";
         }
 
         
+
         
 
         $resultAnswers = mysqli_query($con,"select a.* from answer a, question q WHERE q.id_question = a.fk_question and q.id_question=".$id_pregunta."");
@@ -138,16 +159,44 @@ include "php/session.php";
                 
             }
             
+            if($pregunta_respondida == $row[0]){
+                  echo '<div class="row rowRespondida">
+                    <input class="respondido" type="radio" value="'.$row[0].';'.$row[1].'" name="respuesta" CHECKED>'.$row[2].' - '.$numVotos.'                                 votos</input>                    
+                  </div> ';   
+               $checked = false;
+
+            } else{
+                
+                
+                if($checked == true){
+                    echo '<div class="row rowFriend">
+                    <input class="respondido" type="radio" value="'.$row[0].';'.$row[1].'" name="respuesta" CHECKED>'.$row[2].' - '.$numVotos.'                                 votos</input>                    
+                    </div> ';  
+                    $checked = false;
+                } else {
+                    echo '<div class="row rowFriend">
+                    <input class="respondido" type="radio" value="'.$row[0].';'.$row[1].'" name="respuesta">'.$row[2].' - '.$numVotos.'                                 votos</input>                    
+                    </div> ';  
+                }
+                
+              
+            }
             
-            echo '<div class="row rowFriend">
-                    <input type="radio" value="'.$row[0].';'.$row[1].'" name="respuesta">'.$row[2].' - '.$numVotos.' votos</input>                    
-                  </div> ';
+
 
         }
 
-        echo '    <input type="submit" name="submit" id="submit" value="Responder"/> <br/>
+        if($respondido == false){
+                    echo '    <input type="submit" name="submit" id="submit" value="Responder"/> <br/>
                   </form>
               </div>';
+        } else {
+                    echo '    <input type="submit" name="modificar" id="submit" value="Modificar respuesta"/> <br/>
+                  </form>
+              </div>';
+        }
+
+
 
     ?>
 
