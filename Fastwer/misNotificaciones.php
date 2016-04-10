@@ -22,7 +22,7 @@ include "php/session.php";
 
     <!-- Custom CSS -->
     <link href="css/small-business.css" rel="stylesheet">
-    <link href="css/friends.css" rel="stylesheet">
+    <link href="css/misNotificaciones.css" rel="stylesheet">
 
 
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
@@ -60,7 +60,7 @@ include "php/session.php";
         
         
             
-    
+    	
         <!-- Buscar Amigos PHP -->
             
        <?php
@@ -70,7 +70,7 @@ include "php/session.php";
      
         include 'php/conexion.php';
 
-        $result = mysqli_query($con,"select q.id_question,q.title, q.question,q.views,q.date_create FROM friends f, user u, question q WHERE u.id = f.id_friend AND f.id_user='".$id_session."' GROUP BY q.id_question");
+        $result = mysqli_query($con,"select q.id_question,q.title, q.question,q.views,q.date_create, f.id_user FROM friends f, user u, question q WHERE u.id = f.id_friend AND f.id_user='".$id_session."' GROUP BY q.id_question ORDER BY date_create DESC LIMIT 20");
        
 
          if (!$result) {
@@ -79,10 +79,12 @@ include "php/session.php";
                   
          while ($row = mysqli_fetch_array($result)) {
 
+       
                  echo'
              
 
-                    <div class="col-xs-6">
+                    <div class="col-xs-4">
+                    <p><i>(Pregunta echa por tu amigo/amiga: '.$row['username'].')</i></p>
                     <h2>'. $row['title'] .'</h2><p>' .$row['question'] . '
 
                     <a class="btn btn-default" href="visualizeQuestion.php?id_pregunta='.$row[0].'">Responder pregunta...</a></p>
