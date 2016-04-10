@@ -70,7 +70,7 @@ include "php/session.php";
      
         include 'php/conexion.php';
 
-        $result = mysqli_query($con,"select q.id_question,q.title, q.question,q.views,q.date_create, f.id_user FROM friends f, user u, question q WHERE u.id = f.id_friend AND f.id_user='".$id_session."' GROUP BY q.id_question ORDER BY date_create DESC LIMIT 20");
+        $result = mysqli_query($con,"select q.id_question,q.title, q.question,q.views,q.date_create, q.fk_user FROM friends f, user u, question q WHERE u.id = f.id_friend AND f.id_user='".$id_session."' GROUP BY q.id_question ORDER BY date_create DESC LIMIT 20");
        
 
          if (!$result) {
@@ -79,18 +79,22 @@ include "php/session.php";
                   
          while ($row = mysqli_fetch_array($result)) {
 
-       
+                    $resultSelc = mysqli_query($con,"select username FROM  user  WHERE  id=" .$row['fk_user'] . "");
+                    while ($row2 = mysqli_fetch_array($resultSelc)) {                  
+
                  echo'
-             
+                    
+
 
                     <div class="col-xs-4">
-                    <p><i>(Pregunta echa por tu amigo/amiga: '.$row['username'].')</i></p>
+                    <p><i>(Pregunta echa por tu amigo/amiga: '.$row2['username'].')</i></p>
                     <h2>'. $row['title'] .'</h2><p>' .$row['question'] . '
 
                     <a class="btn btn-default" href="visualizeQuestion.php?id_pregunta='.$row[0].'">Responder pregunta...</a></p>
                     
                     </div> 
                     ';
+                }
                                                     
                 }
                   

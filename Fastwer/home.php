@@ -94,6 +94,7 @@ include "php/session.php";
             else if($_POST['option']=='Temps'){
 
                 $consulta_mysql="select id_question,title, question,views,date_create from question ORDER BY date_create DESC LIMIT 20";
+                var_dump('xdđ');
 
             }
            
