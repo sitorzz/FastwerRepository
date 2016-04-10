@@ -36,7 +36,7 @@ include "php/session.php";
 
 <body>
 
-    <!-- Navigation -->
+   <!-- Navigation -->
     <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
         <div class="container">
             <!-- Brand and toggle get grouped for better mobile display -->
@@ -54,7 +54,6 @@ include "php/session.php";
             <!-- Collect the nav links, forms, and other content for toggling -->
             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                 <ul class="nav navbar-nav">
-                    
                     <li>
                         <a href="home.php">Visualizar</a>
                     </li>
@@ -68,13 +67,11 @@ include "php/session.php";
                         <a href="#">Soporte</a>
                     </li>
                     <li>
-                        <a href="#">Mi perfil</a>
+                        <a href="profile.php">Mi perfil</a>
                     </li>
-                    
                     <li>
                         <a href="php/logout.php">Cerrar sesión</a>
                     </li>
-
                 </ul>
             </div>
             <!-- /.navbar-collapse -->
