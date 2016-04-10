@@ -61,10 +61,13 @@
                         <a href="#acceder">Acceder</a>
                     </li>
                     <li>
-                        <a href="#">Sobre nosotros</a>
+                        <a href="aboutus.php">Sobre nosotros</a>
                     </li>
                     <li>
-                        <a href="#">Pólitica del sitio</a>
+                        <a href="legal.php">Pólitica del sitio</a>
+                    </li>
+                    <li>
+                        <a href="#">Contactar</a>
                     </li>
 
                 </ul>
