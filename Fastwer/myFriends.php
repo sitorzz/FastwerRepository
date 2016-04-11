@@ -60,17 +60,19 @@ include "php/session.php";
         
         <form method="post" role="form" name="registro" action="searchFriends.php">
 
-            <h>Buscar amigo:</h>
+            <div class="form-group">
+            <label for="nameFriend" class="soporte">Buscar amigo: </label>
+            <input class="form-control" type="text" name="nameFriend" placeholder="nombre" required>
+            </div>
 
-            <input type="text" name="nameFriend" placeholder="nombre" required>
-
-            <input type="submit" name="submit" value="Buscar" class="btn btn-default">
+            <input class="btn btn-primary btn-lg" type="submit" name="submit" value="Buscar" class="btn btn-default">
             
         </form>
  
         <hr>
         
         
+    
     
         <!-- Amigos PHP -->
             

@@ -61,7 +61,7 @@
                         <a href="index.php">Acceder</a>
                     </li>
                     <li>
-                        <a href="about.php">Sobre nosotros</a>
+                        <a href="aboutus.php">Sobre nosotros</a>
                     </li>
                     <li>
                         <a href="legal.php">Pólitica del sitio</a>
