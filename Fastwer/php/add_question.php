@@ -124,6 +124,6 @@ if ($uploadOk == 0) {
 
 
 echo "
-<script>window.location='../home.php';</script>";
+<script>window.location='../add_question.php';</script>";
 
 ?>
