@@ -34,7 +34,6 @@ include "php/session.php";
 
 <body>
 
-
     <?php
     
         include "nav.php";
@@ -51,26 +50,39 @@ include "php/session.php";
                 <div class="well text-center">
                     CONTACTO CON EL SOPORTE
                 </div>
-            </div>            
+            </div>  
+            
+            <div class="col-xs-12">   
+                <p>Contáctenos para que podamos resolver cualquier duda o problema con nuestro servicio, le contestaremos a la mayor brevedad posible. <br>Envíenos todo tipo de sugerencias para que podamos mejorar nuestra plataforma. Reporte usuarios, preguntas y cualquier problema que tenga con nuestra plataforma o cualquier usuario de ella en sus diferentes dispositivos.</p>
+            </div>
         </div>   
         
         
         
-    <form name="frmContacto" method="post" action="">
-    <!--<form name="frmContacto" method="post" action="php/mailSoporte.php">-->
+    <div class="">
         
-    <label for="first_name" class="soporte">Nombre: </label><br>
-    <input type="text" name="first_name" maxlength="50" size="25" required><br><br>
+        <form name="frmContacto" method="post" action="">
+        <!--<form name="frmContacto" method="post" action="php/mailSoporte.php">-->
 
-    <label for="email" class="soporte">E-mail: </label><br>
-    <input type="text" name="email" maxlength="80" size="35" required><br><br>
+        <div class="form-group">
+        <label for="first_name" class="soporte">Nombre: </label>
+        <input class="form-control" type="text" name="first_name" maxlength="50" size="25" required>
+        </div>
+            
+        <div class="form-group">
+        <label for="email" class="soporte">E-mail: </label>
+        <input class="form-control" type="text" name="email" maxlength="80" size="35" required>
+        </div>
+            
+        <div class="form-group">
+        <label for="comments" class="soporte">Comentarios: </label>
+        <textarea class="form-control" name="comments" maxlength="500" cols="70" rows="5" required></textarea>
+        </div>
 
-    <label class="soporte">Comentarios: </label><br>
-    <textarea name="comments" maxlength="500" cols="70" rows="5" required></textarea><br><br>
-
-    <input type="submit" value="Enviar">
-
-    </form>
+        <input class="btn btn-primary btn-lg" type="submit" value="Enviar">
+        </form>
+        
+    </div>    
 
 
         <!-- Footer -->
