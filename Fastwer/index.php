@@ -33,91 +33,55 @@
 
 </head>
 
-<body>
-<nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
-        <div class="container">
-            <!-- Brand and toggle get grouped for better mobile display -->
-            <div class="navbar-header">
-                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
-                    <span class="sr-only">Toggle navigation</span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                </button>
-                <a class="navbar-brand" href="#">
-                    <img src="http://placehold.it/150x50&text=Logo" alt="">
-                </a>
-            </div>
-            <!-- Collect the nav links, forms, and other content for toggling -->
-            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-                <ul class="nav navbar-nav">
-                    <li>
-                        <a href="#">Servicios</a>
-                    </li>
-                    <li>
-                        <a href="#registrarse">Registrarse</a>
-                    </li>
-                    <li>
-                        <a href="#acceder">Acceder</a>
-                    </li>
-                    <li>
-                        <a href="aboutus.php">Sobre nosotros</a>
-                    </li>
-                    <li>
-                        <a href="legal.php">Pólitica del sitio</a>
-                    </li>
-                    <li>
-                        <a href="#">Contactar</a>
-                    </li>
-
-                </ul>
-            </div>
-            <!-- /.navbar-collapse -->
-        </div>
-        <!-- /.container -->
-    </nav>
-    <div class="container-fluid">
+<body>    
+    
+    <?php
+    
+        include "navIndex.php";
+    
+    ?>
+    
+    <div class="container">
 
         <h1 class="text-center">FastWer</h1>
 
 
     <div id="myCarousel" class="carousel slide" data-ride="carousel">
   <!-- Indicators -->
-  <ol class="carousel-indicators">
-    <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
-    <li data-target="#myCarousel" data-slide-to="1"></li>
-    <li data-target="#myCarousel" data-slide-to="2"></li>
+      <ol class="carousel-indicators">
+        <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+        <li data-target="#myCarousel" data-slide-to="1"></li>
+        <li data-target="#myCarousel" data-slide-to="2"></li>
 
-  </ol>
+      </ol>
         
 
-  <!-- Wrapper for slides -->
-  <div class="carousel-inner" role="listbox">
-    <div class="item active">
-      <img src="images/carousel/redes.jpg" alt="Fastwer">
-    </div>
-
-    <div class="item">
-      <img src="images/carousel/redes.jpg" alt="Chania">
-    </div>
-
-    <div class="item">
-      <img src="images/carousel/redes.jpg" alt="Flower">
-    </div>
-
-  </div>
-        <!-- Left and right controls -->
-  <a class="left carousel-control" href="#myCarousel" role="button" data-slide="prev">
-    <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
-    <span class="sr-only">Previous</span>
-  </a>
-  <a class="right carousel-control" href="#myCarousel" role="button" data-slide="next">
-    <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
-    <span class="sr-only">Next</span>
-  </a>
+      <!-- Wrapper for slides -->
+      <div class="carousel-inner" role="listbox">
+        <div class="item active">
+          <img src="images/carousel/redes.jpg" alt="Fastwer">
         </div>
-        
-        
+
+        <div class="item">
+          <img src="images/carousel/redes.jpg" alt="Chania">
+        </div>
+
+        <div class="item">
+          <img src="images/carousel/redes.jpg" alt="Flower">
+        </div>
+
+      </div>
+            <!-- Left and right controls -->
+      <a class="left carousel-control" href="#myCarousel" role="button" data-slide="prev">
+        <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+        <span class="sr-only">Previous</span>
+      </a>
+      <a class="right carousel-control" href="#myCarousel" role="button" data-slide="next">
+        <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+        <span class="sr-only">Next</span>
+      </a>
+    </div>
+            
 
   
     <div class="col-xs-12 col-md-4">
@@ -135,7 +99,6 @@
       <p>Publícalas tanto para tus seguidores como para el mundo entero y quédate mucho más tranquilo.</p>
     </div>
         
-</div>
     
     
 <div class="container col-md-12">
@@ -207,6 +170,9 @@
 
     </div>
 </div>
+    
+    </div>
+
         
 
 

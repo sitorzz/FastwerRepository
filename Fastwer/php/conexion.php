@@ -2,7 +2,7 @@
 
 $host="localhost";
 $user="root";
-$password="root";
+$password="";
 $db="fastwer_db";
 $con = new mysqli($host,$user,$password,$db);
 
