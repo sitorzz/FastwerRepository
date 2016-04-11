@@ -5,7 +5,7 @@ $target_dir = "../images/";
 $target_file = $target_dir . basename($_FILES["fileToUpload"]["name"]);
 $uploadOk = 1;
 $imageFileType = pathinfo($target_file,PATHINFO_EXTENSION);
-if(isset($_POST["fileToUpload"])){
+
 // Check if image file is a actual image or fake image
 if(isset($_POST["submit"])) {
     $check = getimagesize($_FILES["fileToUpload"]["tmp_name"]);
@@ -50,7 +50,7 @@ if ($uploadOk == 0) {
         echo "</br>Sorry, there was an error uploading your file.";
     }
 }
-}
+
 
 
 
@@ -124,6 +124,6 @@ if ($uploadOk == 0) {
 
 
 echo "
-<script>window.location='../home.php';</script>";
+<script>window.location='../add_question.php';</script>";
 
 ?>
