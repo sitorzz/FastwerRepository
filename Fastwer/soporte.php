@@ -61,7 +61,7 @@ include "php/session.php";
         
     <div class="">
         
-        <form name="frmContacto" method="post" action="">
+        <form name="frmContacto" method="post" action="php/mailsoporte.php">
         <!--<form name="frmContacto" method="post" action="php/mailSoporte.php">-->
 
         <div class="form-group">

@@ -11,6 +11,6 @@ $con->query($result);
 
 $con->close();
   
-header('Location: ../myFriends.php');
+print "<script>window.location='../myFriends.php';</script>";
 
 ?>
