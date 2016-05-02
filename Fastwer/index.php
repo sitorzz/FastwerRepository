@@ -33,88 +33,55 @@
 
 </head>
 
-<body>
-<nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
-        <div class="container">
-            <!-- Brand and toggle get grouped for better mobile display -->
-            <div class="navbar-header">
-                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
-                    <span class="sr-only">Toggle navigation</span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                </button>
-                <a class="navbar-brand" href="#">
-                    <img src="http://placehold.it/150x50&text=Logo" alt="">
-                </a>
-            </div>
-            <!-- Collect the nav links, forms, and other content for toggling -->
-            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-                <ul class="nav navbar-nav">
-                    <li>
-                        <a href="#">Servicios</a>
-                    </li>
-                    <li>
-                        <a href="#registrarse">Registrarse</a>
-                    </li>
-                    <li>
-                        <a href="#acceder">Acceder</a>
-                    </li>
-                    <li>
-                        <a href="#">Sobre nosotros</a>
-                    </li>
-                    <li>
-                        <a href="#">Pólitica del sitio</a>
-                    </li>
-
-                </ul>
-            </div>
-            <!-- /.navbar-collapse -->
-        </div>
-        <!-- /.container -->
-    </nav>
-    <div class="container-fluid">
+<body>    
+    
+    <?php
+    
+        include "navIndex.php";
+    
+    ?>
+    
+    <div class="container">
 
         <h1 class="text-center">FastWer</h1>
 
 
     <div id="myCarousel" class="carousel slide" data-ride="carousel">
   <!-- Indicators -->
-  <ol class="carousel-indicators">
-    <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
-    <li data-target="#myCarousel" data-slide-to="1"></li>
-    <li data-target="#myCarousel" data-slide-to="2"></li>
+      <ol class="carousel-indicators">
+        <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+        <li data-target="#myCarousel" data-slide-to="1"></li>
+        <li data-target="#myCarousel" data-slide-to="2"></li>
 
-  </ol>
+      </ol>
         
 
-  <!-- Wrapper for slides -->
-  <div class="carousel-inner" role="listbox">
-    <div class="item active">
-      <img src="images/carousel/redes.jpg" alt="Fastwer">
-    </div>
-
-    <div class="item">
-      <img src="images/carousel/redes.jpg" alt="Chania">
-    </div>
-
-    <div class="item">
-      <img src="images/carousel/redes.jpg" alt="Flower">
-    </div>
-
-  </div>
-        <!-- Left and right controls -->
-  <a class="left carousel-control" href="#myCarousel" role="button" data-slide="prev">
-    <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
-    <span class="sr-only">Previous</span>
-  </a>
-  <a class="right carousel-control" href="#myCarousel" role="button" data-slide="next">
-    <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
-    <span class="sr-only">Next</span>
-  </a>
+      <!-- Wrapper for slides -->
+      <div class="carousel-inner" role="listbox">
+        <div class="item active">
+          <img src="images/carousel/redes.jpg" alt="Fastwer">
         </div>
-        
-        
+
+        <div class="item">
+          <img src="images/carousel/redes.jpg" alt="Chania">
+        </div>
+
+        <div class="item">
+          <img src="images/carousel/redes.jpg" alt="Flower">
+        </div>
+
+      </div>
+            <!-- Left and right controls -->
+      <a class="left carousel-control" href="#myCarousel" role="button" data-slide="prev">
+        <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+        <span class="sr-only">Previous</span>
+      </a>
+      <a class="right carousel-control" href="#myCarousel" role="button" data-slide="next">
+        <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+        <span class="sr-only">Next</span>
+      </a>
+    </div>
+            
 
   
     <div class="col-xs-12 col-md-4">
@@ -132,68 +99,80 @@
       <p>Publícalas tanto para tus seguidores como para el mundo entero y quédate mucho más tranquilo.</p>
     </div>
         
-</div>
     
     
 <div class="container col-md-12">
-  <div class="panel-group" id="accordion">
+<div class="panel-group" id="accordion">
     <div class="panel panel-default">
-      <div class="panel-heading">
-        <h4 class="panel-title">
-          <a data-toggle="collapse" data-parent="#accordion" href="#collapse1">Login</a>
-        </h4>
-      </div>
+        <div class="panel-heading">
+            <h4 class="panel-title">
+            <a data-toggle="collapse" data-parent="#accordion" href="#collapse1">Login</a>
+            </h4>
+        </div>
         <div id="collapse1" class="panel-collapse collapse in">
-             <div class="panel-body">
-		<form role="form" name="login" action="php/login.php" method="post">
+            <div class="panel-body">
+                
+                <form role="form" name="login" action="php/login.php" method="post">
 
-		    <label for="username">Nombre de usuario o email</label>
-		    <input type="text" class="form-control" id="username2" name="username2" placeholder="Nombre de usuario" required>
+                <div class="form-group">
+                <label for="username">Nombre de usuario o email</label>
+                <input type="text" class="form-control" id="username2" name="username2" placeholder="Nombre de usuario" required>
+                </div>
 
-		    <label for="password">Contrase&ntilde;a</label>
-		    <input type="password" class="form-control" id="password2" name="password2" placeholder="Contrase&ntilde;a" required>
+                <div class="form-group">
+                <label for="password">Contrase&ntilde;a</label>
+                <input type="password" class="form-control" id="password2" name="password2" placeholder="Contrase&ntilde;a" required>
+                </div>
 
-
-		  <button type="submit" class="btn btn-default" name="login">Acceder</button>
-		</form>
+                <button type="submit" class="btn btn-default" name="login">Acceder</button>
+                </form>
             </div>
-      </div>
+        </div>
     </div>
 
 
-  <div class="panel panel-default">
-      <div class="panel-heading">
-        <h4 class="panel-title">
-          <a data-toggle="collapse" data-parent="#accordion" href="#collapse2">Registro</a>
-        </h4>
-      </div>
-      
-      <div id="collapse2" class="panel-collapse collapse">
-		<form role="form" name="registro" action="php/registro.php" method="post">
-		 <div class="panel-body">
-		    <label for="username">Nombre de usuario</label>
-		    <input type="text" class="form-control" id="username" name="username" placeholder="Nombre de usuario" PATTERN = "[a-zA-Z0-9_-]{3,15}$" title="Debe contener de 3 a 15 caracteres sin signos de puntuación, ni caracteres especiales" required>
-		  
-		 
-		    <label for="email">Correo Electronico</label>
-		    <input type="email" class="form-control" id="email" name="email" placeholder="Correo Electronico" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,3}$" required>
-		  
-		
-		    <label for="password">Contrase&ntilde;a</label>
-		    <input type="password" class="form-control" id="password" name="password" placeholder="Contrase&ntilde;a" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{5,}" title="Debe contener una mayúscula, una minuscula, un número y más de 5 caracteres por su seguridad" required>
-		  
-	
-		    <label for="confirm_password">Confirmar Contrase&ntilde;a</label>
-		    <input type="password" class="form-control" id="confirm_password" name="confirm_password" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{5,}" title="Debe contener una mayúscula, una minuscula, un número y más de 5 caracteres por su seguridad" placeholder="Confirmar Contrase&ntilde;a" required>
-		  
+    <div class="panel panel-default">
 
-		  <button type="submit" class="btn btn-default" name="registro">Registrar</button>
-		</form>
-          
-      </div>
-  </div> 
+        <div class="panel-heading">
+            <h4 class="panel-title">
+            <a data-toggle="collapse" data-parent="#accordion" href="#collapse2">Registro</a>
+            </h4>
+        </div>
+
+        <div id="collapse2" class="panel-collapse collapse">
+            <div class="panel-body">
+                <form role="form" name="registro" action="php/registro.php" method="post">	
+                    
+                <div class="form-group">
+                <label for="username">Nombre de usuario</label>
+                <input type="text" class="form-control" id="username" name="username" placeholder="Nombre de usuario" PATTERN = "[a-zA-Z0-9_-]{3,15}$" title="Debe contener de 3 a 15 caracteres sin signos de puntuación, ni caracteres especiales" required>
+                </div>
+
+                <div class="form-group">
+                <label for="email">Correo Electronico</label>
+                <input type="email" class="form-control" id="email" name="email" placeholder="Correo Electronico" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,3}$" required>
+                </div>
+
+                <div class="form-group">
+                <label for="password">Contrase&ntilde;a</label>
+                <input type="password" class="form-control" id="password" name="password" placeholder="Contrase&ntilde;a" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{5,}" title="Debe contener una mayúscula, una minuscula, un número y más de 5 caracteres por su seguridad" required>
+                </div>
+
+                <div class="form-group">
+                <label for="confirm_password">Confirmar Contrase&ntilde;a</label>
+                <input type="password" class="form-control" id="confirm_password" name="confirm_password" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{5,}" title="Debe contener una mayúscula, una minuscula, un número y más de 5 caracteres por su seguridad" placeholder="Confirmar Contrase&ntilde;a" required>
+                </div>
+
+                <button type="submit" class="btn btn-default" name="registro">Registrar</button>
+                </form>
+            </div>
+        </div> 
+
+    </div>
 </div>
-</div>
+    
+    </div>
+
         
 
 

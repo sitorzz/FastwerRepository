@@ -22,7 +22,7 @@ include "php/session.php";
 
     <!-- Custom CSS -->
     <link href="css/small-business.css" rel="stylesheet">
-    <link href="css/friends.css" rel="stylesheet">
+    <link href="css/misNotificaciones.css" rel="stylesheet">
 
 
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
@@ -36,49 +36,11 @@ include "php/session.php";
 
 <body>
 
-    <!-- Navigation -->
-     <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
-        <div class="container">
-            <!-- Brand and toggle get grouped for better mobile display -->
-            <div class="navbar-header">
-                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
-                    <span class="sr-only">Toggle navigation</span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                </button>
-                <a class="navbar-brand" href="#">
-                    <img src="http://placehold.it/150x50&text=Logo" alt="">
-                </a>
-            </div>
-            <!-- Collect the nav links, forms, and other content for toggling -->
-            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-                <ul class="nav navbar-nav">
-                    <li>
-                        <a href="home.php">Visualizar</a>
-                    </li>
-                    <li>
-                        <a href="add_question.php">Nueva Pregunta</a>
-                    </li>
-                    <li>
-                        <a href="myFriends.php">Amigos</a>
-                    </li>
-                    <li>
-                        <a href="#">Soporte</a>
-                    </li>
-                    <li>
-                        <a href="profile.php">Mi perfil</a>
-                    </li>
-                    <li>
-                        <a href="php/logout.php">Cerrar sesión</a>
-                    </li>
-                </ul>
-            </div>
-            <!-- /.navbar-collapse -->
-        </div>
-        <!-- /.container -->
-    </nav>
-    </nav>
+    <?php
+    
+        include "nav.php";
+    
+    ?>
 
     <!-- Page Content -->
     <div class="container">
@@ -88,7 +50,7 @@ include "php/session.php";
         <div class="row">
             <div class="col-lg-12">
                 <div class="well text-center">
-                    Mis notificaciones
+                    <b>Mis notificaciones:</b> Últimas preguntas de tus amigos/amigas
                 </div>
             </div>            
         </div>   
@@ -98,7 +60,7 @@ include "php/session.php";
         
         
             
-    
+    	
         <!-- Buscar Amigos PHP -->
             
        <?php
@@ -108,7 +70,7 @@ include "php/session.php";
      
         include 'php/conexion.php';
 
-        $result = mysqli_query($con,"select q.id_question,q.title, q.question,q.views,q.date_create FROM friends f, user u, question q WHERE u.id = f.id_friend AND f.id_user='".$id_session."' GROUP BY q.id_question");
+        $result = mysqli_query($con,"select q.id_question,q.title, q.question,q.views,q.date_create, q.fk_user FROM friends f, user u, question q WHERE u.id = f.id_friend AND f.id_user='".$id_session."' GROUP BY q.id_question ORDER BY date_create DESC LIMIT 20");
        
 
          if (!$result) {
@@ -117,16 +79,22 @@ include "php/session.php";
                   
          while ($row = mysqli_fetch_array($result)) {
 
-                 echo'
-             
+                    $resultSelc = mysqli_query($con,"select username FROM  user  WHERE  id=" .$row['fk_user'] . "");
+                    while ($row2 = mysqli_fetch_array($resultSelc)) {                  
 
-                    <div class="col-xs-6">
-                    <h2>'. $row['title'] .'</h2><p>' .$row['question'] . '
+                 echo'
+                    
+
+
+                    <div class="col-xs-6" id="questionDi">
+                    <p><i>(Pregunta echa por tu amigo/amiga: '.$row2['username'].')</i></p>
+                    <h2>'. $row['title'] .'</h2>
 
                     <a class="btn btn-default" href="visualizeQuestion.php?id_pregunta='.$row[0].'">Responder pregunta...</a></p>
                     
                     </div> 
                     ';
+                }
                                                     
                 }
                   

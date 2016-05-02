@@ -5,6 +5,7 @@ $target_dir = "../images/";
 $target_file = $target_dir . basename($_FILES["fileToUpload"]["name"]);
 $uploadOk = 1;
 $imageFileType = pathinfo($target_file,PATHINFO_EXTENSION);
+
 // Check if image file is a actual image or fake image
 if(isset($_POST["submit"])) {
     $check = getimagesize($_FILES["fileToUpload"]["tmp_name"]);
@@ -52,6 +53,7 @@ if ($uploadOk == 0) {
 
 
 
+
                 if(isset($_POST["titulPreg"])){
 
                 $tituloPregun = $_POST["titulPreg"];
@@ -62,7 +64,7 @@ if ($uploadOk == 0) {
 
                 if(isset($_POST["respuestaSimpl"])){
 
-                    $insertRespSimp="insert into question(title,question,votes,image_question,date_create,fk_user,is_simple, views) values('$tituloPregun','$textoPregun',0,'$auxImg', NOW(),1,'s',0)";
+                    $insertRespSimp="insert into question(title,question,votes,image_question,date_create,fk_user,is_simple, views) values('$tituloPregun','$textoPregun',0,'$auxImg', NOW(),'".$id_session."' ,'s',0)";
 
                     
                     
@@ -95,7 +97,7 @@ if ($uploadOk == 0) {
 
                 }else{
 
-                        $insertRespComp="insert into question(title,question,votes,image_question,date_create,fk_user,is_simple, views) values('$tituloPregun','$textoPregun',0,'$auxImg', NOW(),1,'n',0)";
+                        $insertRespComp="insert into question(title,question,votes,image_question,date_create,fk_user,is_simple, views) values('$tituloPregun','$textoPregun',0,'$auxImg', NOW(),'".$id_session."' ,'n',0)";
 
                         if ($con->query($insertRespComp) === TRUE) {
 
@@ -121,8 +123,7 @@ if ($uploadOk == 0) {
         $con->close();
 
 
-
-
-//print "<script>window.location='../profile.php';</script>";
+echo "
+<script>window.location='../add_question.php';</script>";
 
 ?>

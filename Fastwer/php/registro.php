@@ -1,6 +1,10 @@
 <?php
 
 include "conexion.php";
+
+ini_set("sendmail_from","algibealgibe@gmail.com");
+
+
 			
 if($_POST["password"]==$_POST["confirm_password"]){
 			$found = 0;
@@ -34,12 +38,59 @@ if($_POST["password"]==$_POST["confirm_password"]){
 
             if($found==0) {
                 
-            $sql = "insert into user (id,username,password,email,user_avatar,user_state,user_first_log) value (NULL,'".$_POST['username']."','".$_POST['password']."','".$_POST['email']."','images/foto_perfil.jpg',NULL, NOW())";
+                
+            $sql = "insert into user (id,username,password,email,user_avatar,user_state,user_first_log,activado) value (NULL,'".$_POST['username']."','".$_POST['password']."','".$_POST['email']."','images/foto_perfil.jpg',NULL, NOW(),0)";
                 
             $query1 = $con->query($sql);
                 
              if ($query1 != null) {
-            print "<script>alert(\"Registro exitoso. Proceda a logearse\");window.location='../index.php';</script>";
+                 
+            $id_usuario = 0;
+                
+            $queryId= mysqli_query($con,"select id from user where username='".$_POST['username']."'");
+                 
+            while ($row2 = mysqli_fetch_array($queryId)) {
+
+                //echo $row2[0];
+                $id_usuario = $row2[0];
+                echo '<br> Id usuario'.$id_usuario.'<br>';
+                
+            }
+                 
+                 
+            //para el envío en formato HTML 
+            $headers = "MIME-Version: 1.0\r\n"; 
+            $headers .= "Content-type: text/html; charset=iso-8859-1\r\n"; 
+            //dirección del remitente 
+            $headers .= "From: Equipo de fastwer <fastwer.com>\r\n"; // Primer titulo correo
+                 
+            $cuerpo = ' 
+                        <html> 
+                        <head> 
+                        <title>Prueba de correo</title> 
+                        </head> 
+                        <body> 
+                        <h1>Mail para activar la cuenta de fastwer</h1> 
+
+                        <br>
+                        <a href="http://localhost/FastwerRepository/Fastwer/php/activarcuenta.php?idActivar='.$id_usuario.'">Para activar tu cuenta haz click en este enlace</a>
+
+                        </body> 
+                        </html>'; 
+                 
+
+            $email_subject = "Contacto desde el sitio web";
+                 
+            //$email_to = "barrichello@hotmail.es";
+            $email_to = $_POST["email"];
+
+                 
+            mail($email_to, $email_subject, $cuerpo, $headers);
+                 
+            echo "<br>¡El formulario se ha enviado con éxito!";
+
+            print "<script>alert(\"Registro exitoso. Le hemos enviado un mail a su correo para la activacion de su cuenta\");window.location='../index.php';</script>";
+            //print "<script>alert(\"Registro exitoso. Proceda a logearse\");window.location='../index.php';</script>";
 
              }
 				else{

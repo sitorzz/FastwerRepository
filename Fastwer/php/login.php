@@ -23,7 +23,7 @@
 					$user_id = 1;
 
 					$id = $row["id"];
-					echo "bucleaso".$id.$user_id;
+					//echo "bucleaso".$id.$user_id;
 					break;
 
 				}
@@ -37,13 +37,33 @@
 
            if( $user_id==1 ){
 
-            echo $user_id;
+                //echo $user_id;
+               
+                $activado;
+               
+                $queryId= mysqli_query($con,"select activado from user where username='".$_POST['username2']."'");
+                 
+                while ($row2 = mysqli_fetch_array($queryId)) {
 
-                session_start();
-			
-				$_SESSION["id"]= $id;				
+                    //echo $row2[0];
+                    $activado = $row2[0];                    
 
-				print "<script>window.location='../home.php';</script>";
+                }
+               
+               if($activado == 1 ){                   
+                   
+                    session_start();
+
+                    $_SESSION["id"]= $id;				
+
+                    print "<script>window.location='../home.php';</script>";
+                   
+               } else {
+                   
+                   print "<script>alert(\"Necesita activar la cuenta.\");window.location='../index.php';</script>";
+                   
+               }
+
            }
 					
 
