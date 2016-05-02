@@ -64,13 +64,31 @@ include "php/session.php"
               </div>
     
     <div class="container jumbotron text-center col-sm-6">
-           
+        
+            <form action="php/update_password.php" method="post" enctype="multipart/form-data">
+            <div class="form-group">
+            <label for="password">Contrase&ntilde;a</label>
+            <input type="password" class="form-control" id="password" name="password" placeholder="Contrase&ntilde;a" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{5,}" title="Debe contener una mayúscula, una minuscula, un número y más de 5 caracteres por su seguridad" required>
+                </div>
+
+            <div class="form-group">
+            <label for="confirm_password">Confirmar Contrase&ntilde;a</label>
+            <input type="password" class="form-control" id="confirm_password" name="confirm_password" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{5,}" title="Debe contener una mayúscula, una minuscula, un número y más de 5 caracteres por su seguridad" placeholder="Confirmar Contrase&ntilde;a" required>
+                </div>
+        
+            <button type="submit" class="btn btn-default" name="update">Cambiar Password</button>
+
+                        
+            </form>
+        
             <form action="php/upload.php" method="post" enctype="multipart/form-data">
             <p>Select image to upload:</p>
             <input type="file" name="fileToUpload" id="fileToUpload"/>
+          
             <input type="submit" value="Upload Image" name="submit"/>
 
          </form>
+        
     </div>               
           
      <!--
