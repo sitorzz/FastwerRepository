@@ -1,5 +1,6 @@
 <?php 
 include "php/session.php";
+include "php/add_question2.php";
 ?>
 
 <!DOCTYPE html>
@@ -44,12 +45,17 @@ include "php/session.php";
 
         <!-- Heading Row -->
         <div class="row">
-            <div class="col-xs-12" id="respCorrecta">
+        <?php
+          if($variablePasar == '1'){
+           echo ' <div class="col-xs-12" id="respCorrectaa">
                 <p>Pregunta añadida correctamente</p>
-            </div>
-            <div class="col-xs-12" id="respIncorrecta">
+            </div>';
+          }else if($variablePasar == '0'){
+            echo '<div class="col-xs-12" id="respIncorrectaa">
                 <p>No ha sido possible añadir la pregunta, intentelo de nuevo porfavor.</p>
-            </div>
+            </div>';
+          }
+            ?>
             <div class="col-xs-12">
                 <img class="img-responsive img-rounded" src="images/add_quest.jpg" alt="">
             </div>
@@ -67,7 +73,7 @@ include "php/session.php";
         <!-- Call to Action Well -->
         <div class="row">
            
-           <form method="POST" action="php/add_question.php" enctype="multipart/form-data">
+           <form method="POST" action="add_question.php" enctype="multipart/form-data">
 
               <div class="form-group col-xs-12">
                 <label>* Titulo pregunta:</label>
