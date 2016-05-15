@@ -56,6 +56,9 @@ if ($uploadOk == 0) {
 }
 
 
+
+
+
 print "<script>window.location='../profile.php';</script>";
 
 ?>
