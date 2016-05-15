@@ -69,7 +69,7 @@ include "php/session.php";
 
             <div class="form-group">
             <label for="nameFriend" class="soporte">Buscar amigo: </label>
-            <input class="form-control" type="text" name="nameFriend" placeholder="nombre" required>
+            <input class="form-control" type="text" name="nameFriend" placeholder="Nombre del amigo" required>
             </div>
 
             <input class="btn btn-primary btn-lg" type="submit" name="submit" value="Buscar" class="btn btn-default">
@@ -101,7 +101,6 @@ include "php/session.php";
                     </div>  
                     <h class="nameFriend" >'.$row[0].'</h>
                     <a class="btn btn-primary btn-lg addFriend" href="php/removeFriend.php?idFriend='.$row[2].'">Borrar amigo</a>
-                    <a class="btn btn-primary btn-lg addFriend" href="#">Ver perfil</a>
                     
                 </div>
             </div>';
