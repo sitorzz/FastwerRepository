@@ -84,17 +84,17 @@
             
 
   
-    <div class="col-xs-12 col-md-4">
+    <div class="col-xs-12 col-md-4" style="float:none;">
       <h3>Crea tu pregunta</h3>
 
       <p>Ante cualquier situación dudosa, accede rápidamente a nuestro portal y escribe tu pregunta.</p>
     </div>
-    <div class="col-xs-12 col-md-4">
+    <div class="col-xs-12 col-md-4" style="float:none;">
       <h3>Escoge tus respuestas</h3>
       <p>Te ofrecemos 2 tipos de respuesta, la más rápida de si/no y la posibilidad de escribir tu mismo hasta 4.</p>
 
     </div>
-    <div class="col-xs-12 col-md-4">
+    <div class="col-xs-12 col-md-4" style="float:none;">
       <h3>Publícalas</h3>
       <p>Publícalas tanto para tus seguidores como para el mundo entero y quédate mucho más tranquilo.</p>
     </div>
