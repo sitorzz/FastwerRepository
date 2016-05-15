@@ -1,6 +1,5 @@
 <?php
 
-include "session.php";
 include 'conexion.php';
 
 //ini_set("SMTP","localhost");
@@ -46,13 +45,8 @@ $headers .= "From: Equipo de fastwer <fastwer.com>\r\n"; // Primer titulo correo
 //$headers .= "Cc: albertgb@hotmail.es\r\n"; 
 
 //direcciones que recibirán copia oculta 
-//$headers .= "Bcc: pepe@pepe.com,juan@juan.com\r\n"; 
-    
-    
-
-// Debes editar las próximas dos líneas de código de acuerdo con tus preferencias
-//$email_to = "algibealgibe@gmail.com";
-    
+//$headers .= "Bcc: pepe@pepe.com,juan@juan.com\r\n";     
+  
 $email_to = "barrichello@hotmail.es"; //Segundo titulo correo
     
 $email_subject = "Contacto desde el sitio web";
@@ -71,8 +65,6 @@ $email_message = "Detalles del formulario de contacto:\n\n";
 $email_message .= "Nombre: " . $_POST['first_name'] . "\n";
 $email_message .= "E-mail: " . $_POST['email'] . "\n";
 $email_message .= "Comentarios: " . $_POST['comments'] . "\n\n";
-
-
 
 mail($email_to, $email_subject,$cuerpo, $headers);
 //mail("barrichello@hotmail.es","Probando mercury","Probando mercury", $headers);

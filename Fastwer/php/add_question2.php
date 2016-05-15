@@ -8,6 +8,7 @@ $imageFileType = pathinfo($target_file,PATHINFO_EXTENSION);
 
 // Check if image file is a actual image or fake image
 if(isset($_POST["submit"])) {
+    if(isset($_POST["fileToUpload"])) {
     $check = getimagesize($_FILES["fileToUpload"]["tmp_name"]);
     if($check !== false) {
         echo "File is an image - " . $check["mime"] . ".";
@@ -16,7 +17,7 @@ if(isset($_POST["submit"])) {
         echo "</br>File is not an image.";
         $uploadOk = 0;
     }
-}
+
 // Check if file already exists
 if (file_exists($target_file)) {
     echo "Sorry, file already exists.";
@@ -50,12 +51,11 @@ if ($uploadOk == 0) {
         echo "</br>Sorry, there was an error uploading your file.";
     }
 }
-
-
+}
+}
 
 
                 if(isset($_POST["titulPreg"])){
-
                 $tituloPregun = $_POST["titulPreg"];
                 $textoPregun = $_POST["textoPreg"];
                 $respuesta1 = $_POST["Resp1"];
@@ -81,17 +81,15 @@ if ($uploadOk == 0) {
                         $con->query($insertRespost2);
 
                         }
-
-                        
-                            echo "<script type='text/javascript'>document.getElementById('respCorrecta').style.display = 'inline';</script>";
+                        $variablePasar = '1';
+                          
+                            
 
                     } else {
                         
-                       
+                       $variablePasar = '0';
 
-                       
-
-                                echo "<script type='text/javascript'>document.getElementById('respIncorrecta').style.display = 'inline';</script>";
+                               
                     }
 
 
@@ -113,9 +111,10 @@ if ($uploadOk == 0) {
                         $con->query($insertRespost2);
                         $con->query($insertRespost3);
                         }
-                        echo "<script type='text/javascript'>document.getElementById('respCorrecta').style.display = 'inline';</script>";
+                        $variablePasar = 1;
+
                 }else{
-                    echo "<script type='text/javascript'>document.getElementById('respIncorrecta').style.display = 'inline';</script>";
+                    $variablePasar=0;
                 }
             }
         }
@@ -123,7 +122,5 @@ if ($uploadOk == 0) {
         $con->close();
 
 
-echo "
-<script>window.location='../add_question.php';</script>";
 
 ?>
