@@ -20,16 +20,13 @@
                     <a href="index.php">Acceder</a>
                 </li>
                 <li>
-                    <a href="#">Servicios</a>
-                </li>
-                <li>
                     <a href="aboutus.php">Sobre nosotros</a>
                 </li>
                 <li>
                     <a href="legal.php">Pólitica del sitio</a>
                 </li>
                 <li>
-                    <a href="#">Contactar</a>
+                    <a href="contactar.php">Contactar</a>
                 </li>
 
             </ul>
