@@ -9,6 +9,7 @@ ini_set("sendmail_from","algibealgibe@gmail.com");
 if($_POST["password"]==$_POST["confirm_password"]){
 			$found = 0;
 
+        //haces un select del usuario con el username y pw que ha introducido el usuario por los inputs $POST
 		$query= "select * from user where username='".$_POST['username']."' or email='".$_POST['email']."'";
 
 			$result = $con->query($query);
@@ -30,15 +31,15 @@ if($_POST["password"]==$_POST["confirm_password"]){
 
 				}
 			}
-
+            // si $found==1 significa que ya hay algun usuario con ese username y pw
 			if($found==1){
                 
 				print "<script>alert(\"Nombre de usuario o email ya estan registrados.\");window.location='../index.php';</script>";
 			}
-
+            // si found es 0 significa que no ha habido ningun coincidencia y no hay ningun user creado anteriormente con esos datos
             if($found==0) {
                 
-                
+            //haces el insert del user en la bbdd
             $sql = "insert into user (id,username,password,email,user_avatar,user_state,user_first_log,activado) value (NULL,'".$_POST['username']."','".$_POST['password']."','".$_POST['email']."','images/foto_perfil.jpg',NULL, NOW(),0)";
                 
             $query1 = $con->query($sql);

@@ -1,5 +1,7 @@
 <?php
 
+// php para hacer la conexión con la bbdd (mysql) 
+
 $host="localhost";
 $user="root";
 $password="root";

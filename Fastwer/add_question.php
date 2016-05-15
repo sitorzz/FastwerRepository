@@ -46,6 +46,7 @@ include "php/add_question2.php";
         <!-- Heading Row -->
         <div class="row">
         <?php
+          // Recibes la variable del otro php (add_question2.php) y depende si se ha echo el insert correcto o no sera (0 o 1)
           if($variablePasar == '1'){
            echo ' <div class="col-xs-12" id="respCorrectaa">
                 <p>Pregunta añadida correctamente</p>
@@ -73,6 +74,7 @@ include "php/add_question2.php";
         <!-- Call to Action Well -->
         <div class="row">
            
+           <!-- Formulario para añadir nuevas preguntas -->
            <form method="POST" action="add_question.php" enctype="multipart/form-data" id="uno">
 
               <div class="form-group col-xs-12">
@@ -129,7 +131,6 @@ include "php/add_question2.php";
         <!-- /.row -->
 
 
-        <!-- /.row -->
 
         <!-- Footer -->
         <footer>
@@ -148,8 +149,7 @@ include "php/add_question2.php";
 
     <!-- Bootstrap Core JavaScript -->
     <script src="js/bootstrap.min.js"></script>
-    
-    <!-- Ponerlo en un archivo diferente-->
+
 
 
 </body>
