@@ -46,12 +46,12 @@ include "php/session.php"
 
         include 'php/conexion.php';
         
-
+        //select del nombre y imagen del usuario logeado
         $result = mysqli_query($con,"SELECT u.username,u.user_avatar FROM user u WHERE u.id = $id_session");
          if (!$result) {
          die("Database query failed: " . mysqli_error());
          }
-                  
+         //recorres el resultado
          while ($row = mysqli_fetch_array($result)) {
              
          echo ' 

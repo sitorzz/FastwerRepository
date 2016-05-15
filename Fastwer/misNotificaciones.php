@@ -57,22 +57,13 @@ include "php/session.php";
                 </div>
             </div>            
         </div>   
-        
-        
-        
-        
-        
-            
     	
         <!-- Buscar Amigos PHP -->
             
-       <?php
-
-        
-            
+       <?php         
      
         include 'php/conexion.php';
-
+        //select de todas las preguntas de los amigos de la idSesion actual 
         $result1 = mysqli_query($con,"select q.id_question,q.title, q.question,q.views,q.date_create, q.fk_user FROM friends f, user u, question q WHERE q.fk_user in (SELECT u.id FROM friends f, user u WHERE u.id = f.id_friend AND f.id_user='".$id_session."' ORDER BY u.username) GROUP BY q.id_question ORDER BY date_create DESC LIMIT 10");
 
          if (!$result1) {
@@ -80,7 +71,7 @@ include "php/session.php";
          }
 
                echo'    <div class="col-xs-6" id="questionDi">';
-               echo '<h7>Puto bocas1</h7>';
+               echo '<h7>Pregunta</h7>';
          while ($row = mysqli_fetch_array($result1)) {
 
                     $resultSelc = mysqli_query($con,"select username FROM  user  WHERE  id=" .$row['fk_user'] . "");
@@ -103,9 +94,10 @@ include "php/session.php";
                 }
                echo '</div>';   
 
-?>
-<?php
-$result = mysqli_query($con,"select q.id_question,q.title, q.question,q.views,q.date_create, q.fk_user FROM friends f, user u, question q WHERE q.fk_user='".$id_session."' GROUP BY q.id_question ORDER BY date_create DESC LIMIT 10");
+                ?>
+                <?php
+                //select de las preguntas echas por el propio usuario
+                $result = mysqli_query($con,"select q.id_question,q.title, q.question,q.views,q.date_create, q.fk_user FROM friends f, user u, question q WHERE q.fk_user='".$id_session."' GROUP BY q.id_question ORDER BY date_create DESC LIMIT 10");
 
                echo'    <div class="col-xs-6" id="questionDi">';
                echo '<h7>Puto bocas2</h7>';

@@ -88,12 +88,13 @@ include "php/session.php";
             include "php/conexion.php";
 
             if(isset($_POST['option'])){
-                                            
+            //si seleccionan la opcion por defecto se hace un select normal                                
             if($_POST['option']=='Per defecte'){
 
                 $consulta_mysql="select id_question,title, question,views,date_create from question LIMIT 20";
 
             }
+            //si seleccionan la opcion por tiempo se hace un order by por el campo de fecha de creación 
             else if($_POST['option']=='Temps'){
 
                 $consulta_mysql="select id_question,title, question,views,date_create from question ORDER BY date_create DESC LIMIT 20";
@@ -101,7 +102,7 @@ include "php/session.php";
             }
            
             }else{
-
+                //si no eligen ningun de las opciones esta la de "por defecto"
                 $consulta_mysql="select id_question,title, question,views,date_create from question LIMIT 20";
             }
 
@@ -109,7 +110,7 @@ include "php/session.php";
                 $resultado_consulta_mysql=mysqli_query($con,$consulta_mysql);
         
                 
-                
+                //recorre el select hasta que no hayan resultados y imprime para cada uno un div con sus datos.
                 while ($row = mysqli_fetch_array($resultado_consulta_mysql)) {
 
                  echo'
@@ -132,7 +133,7 @@ include "php/session.php";
                     
                 }
             
-            
+                //cierras la conexión
                 $con->close();
          ?>
         </div>

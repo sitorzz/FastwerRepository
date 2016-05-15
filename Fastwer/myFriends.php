@@ -82,12 +82,12 @@ include "php/session.php";
          <?php
 
         include 'php/conexion.php';
-
+        //select el cual recoges todos los amigos que el usuario (idsesion) tiene.
         $result = mysqli_query($con,"SELECT u.username,u.user_avatar,u.id FROM friends f, user u WHERE u.id = f.id_friend AND f.id_user='".$id_session."' ORDER BY u.username");
          if (!$result) {
          die("Database query failed: " . mysqli_error());
          }
-                  
+              //para cada row (amigo) encontrado se imprime el div con los datos    
          while ($row = mysqli_fetch_array($result)) {
              
          echo '<div class="row rowFriend">
