@@ -2,7 +2,7 @@
 include "session.php";
 include "conexion.php";
 $target_dir = "../images/";
-$target_file = $target_dir . basename($_FILES["fileToUpload"]["name"]);
+@$target_file = $target_dir . basename($_FILES["fileToUpload"]["name"]);
 $uploadOk = 1;
 $imageFileType = pathinfo($target_file,PATHINFO_EXTENSION);
 
@@ -97,7 +97,7 @@ if ($uploadOk == 0) {
 
 
 
-                        $insertRespComp="insert into question(title,question,votes,image_question,date_create,fk_user,is_simple, views) values('$tituloPregun','$textoPregun',0,'$auxImg', NOW(),'".$id_session."' ,'n',0)";
+                        @$insertRespComp="insert into question(title,question,votes,image_question,date_create,fk_user,is_simple, views) values('$tituloPregun','$textoPregun',0,'$auxImg', NOW(),'".$id_session."' ,'n',0)";
 
                         if ($con->query($insertRespComp) === TRUE) {
 
@@ -115,8 +115,8 @@ if ($uploadOk == 0) {
                         $insertRespost3="insert into answer(fk_question,answer) values ('$row[0]','$respuesta3')";
                         }
                         $con->query($insertRespost);
-                        $con->query($insertRespost2);
-                        $con->query($insertRespost3);
+                        @$con->query($insertRespost2);
+                        @$con->query($insertRespost3);
                         }
                         $variablePasar = 1;
 
