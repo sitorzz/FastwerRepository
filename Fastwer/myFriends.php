@@ -50,7 +50,11 @@ include "php/session.php";
 
                 <!-- Texto informativo -->
         <div class="row">
-            <div class="col-lg-12">
+            <div class="col-xs-12">
+                <img class="img-responsive img-rounded" src="images/myFriends.png"  id="titleF" alt="">
+            </div>
+
+            <div class="col-xs-12">
                 <div class="well text-center">
                     MIS AMIGOS
                 </div>

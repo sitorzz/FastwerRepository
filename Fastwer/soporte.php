@@ -23,8 +23,9 @@ include "php/session.php";
     <link href="css/bootstrap.css" rel="stylesheet">
 
     <!-- Custom CSS -->
-    <link href="css/small-business.css" rel="stylesheet">
     <link href="css/soporte.css" rel="stylesheet">
+    <link href="css/small-business.css" rel="stylesheet">
+
 
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -46,9 +47,14 @@ include "php/session.php";
     <!-- Page Content -->
     <div class="container">
 
-
+            
         <!-- Texto informativo -->
         <div class="row">
+              
+            <div class="col-xs-12">
+                <img class="img-responsive img-rounded" src="images/soporte.png" alt="" style="margin-bottom: 20px;">
+            </div> 
+
             <div class="col-lg-12">
                 <div class="well text-center">
                     CONTACTO CON EL SOPORTE

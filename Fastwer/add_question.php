@@ -57,8 +57,8 @@ include "php/add_question2.php";
             </div>';
           }
             ?>
-            <div class="col-xs-12">
-                <img class="img-responsive img-rounded" src="images/add_quest.jpg" alt="">
+            <div class="col-xs-12" id="imgSo">
+                <img class="img-responsive img-rounded" src="images/add_quest.jpg"  alt="">
             </div>
             <!-- /.col-md-8 -->
             <div class="col-xs-12">
