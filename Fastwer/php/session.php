@@ -1,6 +1,6 @@
 <?php
 
-session_start();
+@session_start();
 
 $id_session=$_SESSION["id"];
 

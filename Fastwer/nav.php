@@ -9,8 +9,8 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                <a class="navbar-brand" href="#">
-                    <img src="http://placehold.it/150x50&text=Logo" alt="">
+                <a class="navbar-brand img_loog" class="logo_fastwer" href="#">
+                    <img src="images/logo.png" alt="">
                 </a>
             </div>
             <!-- Collect the nav links, forms, and other content for toggling -->
