@@ -47,11 +47,11 @@ include "php/add_question2.php";
         <div class="row">
         <?php
           // Recibes la variable del otro php (add_question2.php) y depende si se ha echo el insert correcto o no sera (0 o 1)
-          if($variablePasar == '1'){
+          if(@$variablePasar == '1'){
            echo ' <div class="col-xs-12" id="respCorrectaa">
                 <p>Pregunta añadida correctamente</p>
             </div>';
-          }else if($variablePasar == '0'){
+          }else if(@$variablePasar == '0'){
             echo '<div class="col-xs-12" id="respIncorrectaa">
                 <p>No ha sido possible añadir la pregunta, intentelo de nuevo porfavor.</p>
             </div>';
