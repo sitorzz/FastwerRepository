@@ -70,8 +70,7 @@ include "php/session.php";
          die("Database query failed: " . mysqli_error());
          }
 
-               echo'    <div class="col-xs-6" id="questionDi">';
-               echo '<h7>Pregunta</h7>';
+               echo'    <div class="col-xs-12 col-md-6" id="questionDi">';
          while ($row = mysqli_fetch_array($result1)) {
 
                     $resultSelc = mysqli_query($con,"select username FROM  user  WHERE  id=" .$row['fk_user'] . "");
@@ -82,7 +81,7 @@ include "php/session.php";
 
 
                    
-                    <p><i>(Pregunta echa por tu amigo/amiga: '.$row2['username'].')</i></p>
+                    <i><u><h4>(Pregunta echa por tu amigo/amiga: '.$row2['username'].')</h4></u></i>
                     <h2>'. $row['title'] .'</h2>
 
                     <a class="btn btn-default" href="visualizeQuestion.php?id_pregunta='.$row[0].'">Responder pregunta...</a></p>
@@ -99,8 +98,9 @@ include "php/session.php";
                 //select de las preguntas echas por el propio usuario
                 $result = mysqli_query($con,"select q.id_question,q.title, q.question,q.views,q.date_create, q.fk_user FROM friends f, user u, question q WHERE q.fk_user='".$id_session."' GROUP BY q.id_question ORDER BY date_create DESC LIMIT 10");
 
-               echo'    <div class="col-xs-6" id="questionDi">';
-               echo '<h7>Puto bocas2</h7>';
+               echo'    <div class="col-xs-12 col-md-6" id="questionDi">';
+               echo '   <i><u><h4>(Preguntas echas por ti)</h4></u></i>';
+        
      		    while ($row = mysqli_fetch_array($result)) {
 
                     $resultSelc = mysqli_query($con,"select username FROM  user  WHERE  id=" .$row['fk_user'] . "");
@@ -108,10 +108,6 @@ include "php/session.php";
 
                  echo'
                     
-
-
-                   
-                    <p><i>(Pregunta echa por tu amigo/amiga: '.$row2['username'].')</i></p>
                     <h2>'. $row['title'] .'</h2>
 
                     <a class="btn btn-default" href="visualizeQuestion.php?id_pregunta='.$row[0].'">Responder pregunta...</a></p>
