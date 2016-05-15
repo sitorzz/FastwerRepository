@@ -93,7 +93,7 @@ if ($uploadOk == 0) {
                     }
 
 
-                }else{
+                }else if(isset($_POST["Resp1"])) {
 
                         $insertRespComp="insert into question(title,question,votes,image_question,date_create,fk_user,is_simple, views) values('$tituloPregun','$textoPregun',0,'$auxImg', NOW(),'".$id_session."' ,'n',0)";
 
