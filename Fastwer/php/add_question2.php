@@ -93,7 +93,9 @@ if ($uploadOk == 0) {
                     }
 
 
-                }else if(isset($_POST["Resp1"])) {
+                }else if($respuesta1 != "") {
+
+
 
                         $insertRespComp="insert into question(title,question,votes,image_question,date_create,fk_user,is_simple, views) values('$tituloPregun','$textoPregun',0,'$auxImg', NOW(),'".$id_session."' ,'n',0)";
 
@@ -103,10 +105,15 @@ if ($uploadOk == 0) {
                         $resultado_consulta_mysql = mysqli_query($con, $selectPk);
 
                         while ($row = mysqli_fetch_array($resultado_consulta_mysql)) {
-                        
+                        if($respuesta1 != ""){
                         $insertRespost="insert into answer(fk_question,answer) values ('$row[0]','$respuesta1')";
+                        }
+                        if($respuesta2 != ""){
                         $insertRespost2="insert into answer(fk_question,answer) values ('$row[0]','$respuesta2')";
+                        }
+                        if($respuesta3 != ""){
                         $insertRespost3="insert into answer(fk_question,answer) values ('$row[0]','$respuesta3')";
+                        }
                         $con->query($insertRespost);
                         $con->query($insertRespost2);
                         $con->query($insertRespost3);
@@ -116,6 +123,8 @@ if ($uploadOk == 0) {
                 }else{
                     $variablePasar=0;
                 }
+            }else{
+                $variablePasar=0;
             }
         }
 

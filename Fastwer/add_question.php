@@ -73,7 +73,7 @@ include "php/add_question2.php";
         <!-- Call to Action Well -->
         <div class="row">
            
-           <form method="POST" action="add_question.php" enctype="multipart/form-data">
+           <form method="POST" action="add_question.php" enctype="multipart/form-data" id="uno">
 
               <div class="form-group col-xs-12">
                 <label>* Titulo pregunta:</label>
@@ -98,7 +98,7 @@ include "php/add_question2.php";
 
               <div class="form-group col-xs-12">
                 <label>Tipo de respuesta: Si o No?</label>
-                <input type="checkbox" name="respuestaSimpl">
+                <input type="checkbox" name="respuestaSimpl" id="respuestaSimpl">
               </div>
 
               <div class="form-group col-xs-12">
@@ -108,7 +108,7 @@ include "php/add_question2.php";
             
               <div class="form-group col-md-4">
                 <label>Respuesta 1:</label>
-                <input type="textarea" class="form-control" placeholder="Escribe tu opcion 1" name="Resp1">
+                <input type="textarea" class="form-control" placeholder="Escribe tu opcion 1" name="Resp1" id="Resp1">
               </div>
               <div class="form-group col-md-4">
                 <label>Respuesta 2:</label>
@@ -127,9 +127,6 @@ include "php/add_question2.php";
 
         </div>
         <!-- /.row -->
-
-
-
 
 
         <!-- /.row -->
