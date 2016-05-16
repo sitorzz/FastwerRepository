@@ -83,7 +83,7 @@ include "php/session.php";
 
 
                    
-                    <i><u><h4>(Pregunta echa por tu amigo/amiga: '.$row2['username'].')</h4></u></i>
+                    <i><u><h4>(Pregunta hecha por tu amigo/amiga: '.$row2['username'].')</h4></u></i>
                     <h2>'. $row['title'] .'</h2>
 
                     <a class="btn btn-default" href="visualizeQuestion.php?id_pregunta='.$row[0].'">Responder pregunta...</a></p>
@@ -101,7 +101,7 @@ include "php/session.php";
                 $result = mysqli_query($con,"select q.id_question,q.title, q.question,q.views,q.date_create, q.fk_user FROM friends f, user u, question q WHERE q.fk_user='".$id_session."' GROUP BY q.id_question ORDER BY date_create DESC LIMIT 10");
 
                echo'    <div class="col-xs-12 col-md-6" id="questionDi">';
-               echo '   <i><u><h4>(Preguntas echas por ti)</h4></u></i>';
+               echo '   <i><u><h4>(Preguntas hechas por ti)</h4></u></i>';
         
      		    while ($row = mysqli_fetch_array($result)) {
 
