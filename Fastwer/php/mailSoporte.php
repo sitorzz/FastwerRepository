@@ -71,4 +71,7 @@ mail($email_to, $email_subject,$cuerpo, $headers);
 
 echo "¡El formulario se ha enviado con éxito!";
 }
+
+header('Location:' . getenv('HTTP_REFERER'));
+
 ?>
