@@ -8,7 +8,7 @@
 			$id;
 			$username;
 			//haces un select del usuario que tiene el usernme y pw de los inputs que ha escrito el usuario
-			$query= "select * from user where (username='".$_POST['username2']."' or email='".$_POST['username2']."') and password='".$_POST['password2']."'";
+			$query= "select * from user where (username='".$_POST['username2']."' or email='".$_POST['username2']."') and password='".sha1(md5($_POST['password2']))."'";
 
 			$result = $con->query($query);
 

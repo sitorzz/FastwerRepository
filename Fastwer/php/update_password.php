@@ -7,8 +7,10 @@ include "conexion.php";
 // en el que se actualiza la pasword del usuario a la que ha escrito el user en el input
 if ($_POST["password"]==$_POST["confirm_password"]) {
         
-$result = "UPDATE user SET password = '".$_POST["password"]."' where id = $id_session";
+$result = "UPDATE user SET password = '".sha1(md5($_POST['password']))."' where id = $id_session";
 
+    
+    
 $con->query($result);
 
 $con->close();

@@ -1,3 +1,4 @@
+
 <!-- La Nav que esta en todas las pantallas -->
     <!-- Navigation -->
     <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
@@ -35,9 +36,37 @@
                     <li>
                         <a href="misNotificaciones.php">Mis notificaciones</a>
                     </li>
+                    
+<?php
+
+    $name= "";
+
+    include 'php/conexion.php';
+
+    //select del nombre y imagen del usuario logeado
+    $result = mysqli_query($con,"SELECT u.username,u.user_avatar FROM user u WHERE u.id = $id_session");
+     if (!$result) {
+     die("Database query failed: " . mysqli_error());
+     }
+     //recorres el resultado
+     while ($row = mysqli_fetch_array($result)) {
+
+        $name = $row[0];
+         
+     }
+                    
+     echo ' <li>
+                <a href="profile.php"><u>'.$name.'</u></a>
+            </li>';
+
+     $con->close();
+                    
+?> 
+                    
                     <li>
                         <a href="php/logout.php">Cerrar sesión</a>
                     </li>
+                    
 
                 </ul>
             </div>
