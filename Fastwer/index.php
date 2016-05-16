@@ -33,6 +33,8 @@
 
 </head>
 
+<!-- En este página puedes registrarte a la plataforma web o loggearte con tu usuario -->
+
 <body>    
     
     <?php

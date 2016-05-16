@@ -29,6 +29,8 @@ include "php/session.php"
 
 </head>
 
+<!-- Este es el apartado del usuario loggeado donde puedes cambiar tu imagen (de usuario) y puedes cambiar tu password -->
+
 <body>
 
     <?php

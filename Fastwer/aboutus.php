@@ -33,8 +33,10 @@
 
 </head>
 
+<!-- Este apartado es un php el cual se explica un poco sobre los desarrolladores de la aplicación web.
+		Somos 3: Oriol Andres, Albert Gines y Ruben Heras -->
 <body>
-    
+  
     <?php
     
         include "navIndex.php";

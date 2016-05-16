@@ -33,6 +33,8 @@
 
 </head>
 
+    <!-- En este apartado se explica la Política e información del sitio web-->
+
 <body>
 
     <?php

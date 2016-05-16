@@ -30,6 +30,9 @@ include "php/session.php";
 
 </head>
 
+<!-- Este apartado se utiliza para responder una pregunta (primero se detecta que pregunta ha sido la seleccionada y se visualiza esta 
+    únicamente en otra pantalla y te da la opción de responderla o si ya esta respondida de modificar la respuesta-->
+
 <body>
 
     <?php

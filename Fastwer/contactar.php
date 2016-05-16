@@ -31,6 +31,9 @@
 
 </head>
 
+    <!-- Este php consta de un formulario (de contacto) que cuando el usuario pulse el boton de enviar se 
+        ejecutra el mailsoporte.php (que enviara un email al de soporte de la plataforma web)-->
+
 <body>
 
     <?php

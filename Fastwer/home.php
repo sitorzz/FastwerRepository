@@ -33,6 +33,8 @@ include "php/session.php";
     <![endif]-->
 
 </head>
+    
+    <!-- Este php se utiliza para visualizar las preguntas (20) (por fecha o por defecto)-->
 
 <body>
 

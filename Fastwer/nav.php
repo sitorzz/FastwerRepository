@@ -1,3 +1,4 @@
+<!-- La Nav que esta en todas las pantallas -->
     <!-- Navigation -->
     <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
         <div class="container">

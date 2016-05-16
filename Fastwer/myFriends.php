@@ -37,6 +37,8 @@ include "php/session.php";
 
 </head>
 
+<!--    En este apartado puedes ver tus amigos (ya agregados) o buscar usuarios para agregarlos -->
+
 <body>
 
     <?php

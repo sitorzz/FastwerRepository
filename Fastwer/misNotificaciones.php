@@ -37,6 +37,8 @@ include "php/session.php";
 
 </head>
 
+<!-- En este apartado podras visualizar tus preguntas echas (a la derecha) o podras ver las preguntas echas por tus amigos (izquierda)-->
+
 <body>
 
     <?php
