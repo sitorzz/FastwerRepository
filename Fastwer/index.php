@@ -61,15 +61,15 @@
       <!-- Wrapper for slides -->
       <div class="carousel-inner" role="listbox">
         <div class="item active">
-          <img src="images/carousel/principal.png" alt="Fastwer">
+          <img class="centerImg" src="images/carousel/principal.png" alt="Fastwer">
         </div>
 
         <div class="item">
-          <img src="images/carousel/principal2.png" alt="Chania">
+          <img class="centerImg" src="images/carousel/principal2.png" alt="Chania">
         </div>
 
         <div class="item">
-          <img src="images/carousel/principal3.png" alt="Flower">
+          <img class="centerImg" src="images/carousel/principal3.png" alt="Flower">
         </div>
 
       </div>
