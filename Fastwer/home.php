@@ -119,9 +119,11 @@ include "php/session.php";
              
 
                     <div class="col-xs-12 col-md-4 divCentro">
-                    <h2>'. $row['title'] .'</h2><p>
-
-                    <a class="btn btn-default" href="visualizeQuestion.php?id_pregunta='.$row[0].'">Ver o Responder pregunta...</a></p>
+                    <h2>'. $row['title'] .'</h2>
+                    
+                    <p>Fecha creación : '.$row['date_create'].'</p>
+                    
+                    <p><a class="btn btn-default" href="visualizeQuestion.php?id_pregunta='.$row[0].'">Ver o Responder pregunta...</a></p>
                     
                     </div> 
                     ';
