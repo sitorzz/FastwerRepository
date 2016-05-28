@@ -114,7 +114,7 @@ include "php/session.php";
 
                     <a class="btn btn-default" href="visualizeQuestion.php?id_pregunta='.$row[0].'">Responder pregunta...</a></p>
                     <a class="btn btn-default" href="eliminarQuestion.php?id_pregunta='.$row[0].'">Eliminar pregunta...</a></p>
-                    <a class="btn btn-default" href="update_question.php?id_pregunta='.$row[0].'">Update pregunta...</a></p>
+                    <a class="btn btn-default" href="add_question.php?id_pregunta='.$row[0].'">Update pregunta...</a></p>
                     
                     ';
                 }

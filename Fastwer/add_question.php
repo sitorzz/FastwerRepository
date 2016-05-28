@@ -50,7 +50,7 @@ include "php/add_question2.php";
         <!-- Heading Row -->
         <div class="row">
         <?php
-
+          include 'php/conexion.php'; 
 
           // Recibes la variable del otro php (add_question2.php) y depende si se ha echo el insert correcto o no sera (0 o 1)
           if(@$variablePasar == '1'){
@@ -64,8 +64,37 @@ include "php/add_question2.php";
           }
 
           $id_pregunta = $_GET['id_pregunta']; 
-          if($id_pregunta != 0){
-            $titulo1 = "Hola";
+
+            if($id_pregunta != 0){
+            $resultSelect2 = mysqli_query($con,"select q.title, q.question, q.image_question, q.is_simple FROM question q WHERE fk_user = ".$id_session." and id_question = ".$id_pregunta." ");
+            while ($row5 = mysqli_fetch_array($resultSelect2)) {
+
+            $titulo1 = $row5['title'];
+            $imagen1 = $row5['image_question'];
+            $texto1 = $row5['question'];
+            
+            
+          
+            if($row5['is_simple'] == 's'){
+              $resp_s = 1;
+
+            }else{
+              $resultAnsw = mysqli_query($con,"select a.* from answer a, question q WHERE q.id_question = a.fk_question and q.id_question=".$id_pregunta." ");
+              $contador = 0;
+              while ($row2 = mysqli_fetch_array($resultAnsw)) {
+                if($contador == 0){
+                  $resp_1 = $row2[2];
+                 }else if($contador == 1){
+                  $resp_2 = $row2[2];
+                }else if($contador == 2){
+                  $resp_3 = $row2[2];
+                }
+                $contador++;
+              }
+            }
+          }
+          
+
           }
 
             ?>
@@ -73,10 +102,22 @@ include "php/add_question2.php";
                 <img class="img-responsive img-rounded" src="images/add_quest.jpg"  alt="">
             </div>
             <!-- /.col-md-8 -->
-            <div class="col-xs-12">
+            <?php
+            if($id_pregunta != 0){
+              echo"
+            <div class='col-xs-12'>
+                <h1>Update pregunta</h1>
+                <p>En este apartado puedes subir una nueva pregunta</p>
+            </div>";
+
+            }else{
+            echo"
+            <div class='col-xs-12'>
                 <h1>Alta pregunta</h1>
                 <p>En este apartado puedes subir una nueva pregunta</p>
-            </div>
+            </div>";
+          }
+            ?>
             <!-- /.col-md-4 -->
         </div>
         <!-- /.row -->
@@ -112,7 +153,7 @@ include "php/add_question2.php";
 
               <div class="form-group col-xs-12">
                 <label>Tipo de respuesta: Si o No?</label>
-                <input type="checkbox" name="respuestaSimpl" id="respuestaSimpl" value="<?php echo $resp_s; ?>">
+                <input type="checkbox" name="respuestaSimpl" id="respuestaSimpl" <?php echo ($resp_s==1 ? 'checked' : '');?> >
               </div>
 
               <div class="form-group col-xs-12">
