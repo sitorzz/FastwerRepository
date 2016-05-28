@@ -128,7 +128,7 @@ include "php/add_question2.php";
         <div class="row">
            
            <!-- Formulario para añadir nuevas preguntas -->
-           <form method="POST" action="add_question.php" enctype="multipart/form-data" id="uno">
+           <form method="POST" action="php/add_question2.php" enctype="multipart/form-data" id="uno">
 
               <div class="form-group col-xs-12">
                 <label>* Titulo pregunta:</label>

@@ -2,33 +2,28 @@
 
 			include "conexion.php";
             
-
-
-			$user_id = 0;
+            $user_id = 0;
 			$id;
 			$username;
-			//haces un select del usuario que tiene el usernme y pw de los inputs que ha escrito el usuario
-			$query= "select * from user where (username='".$_POST['username2']."' or email='".$_POST['username2']."') and password='".sha1(md5($_POST['password2']))."'";
+			
+            $user = $_POST['username2'];
+            $pw = sha1(md5($_POST['password2']));
 
-			$result = $con->query($query);
+            $stmt = $con->prepare('select * from user where (username= ? or email= ?) and password= ?');
+            $stmt->bind_param('sss',$user,$user,$pw);
+            $stmt->execute();
 
-			/*$username = $_POST['username2'];
-			var_dump($username);
-            */
+            $result = $stmt->get_result();
 
 			if ($result->num_rows > 0) {
-
 				while ($row = $result->fetch_assoc()) {
-
-
 					$user_id = 1;
-
 					$id = $row["id"];
 					//echo "bucleaso".$id.$user_id;
 					break;
-
 				}
 			}
+
 			//si el select no ha tenido ningun "row" significa que no hay ningun username con ese pw
             if ( $user_id==0 ){
 
