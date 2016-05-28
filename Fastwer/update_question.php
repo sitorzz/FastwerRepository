@@ -50,8 +50,6 @@ include "php/add_question2.php";
         <!-- Heading Row -->
         <div class="row">
         <?php
-
-
           // Recibes la variable del otro php (add_question2.php) y depende si se ha echo el insert correcto o no sera (0 o 1)
           if(@$variablePasar == '1'){
            echo ' <div class="col-xs-12" id="respCorrectaa">
@@ -62,12 +60,6 @@ include "php/add_question2.php";
                 <p>No ha sido possible añadir la pregunta, intentelo de nuevo porfavor.</p>
             </div>';
           }
-
-          $id_pregunta = $_GET['id_pregunta']; 
-          if($id_pregunta != 0){
-            $titulo1 = "Hola";
-          }
-
             ?>
             <div class="col-xs-12" id="imgSo">
                 <img class="img-responsive img-rounded" src="images/add_quest.jpg"  alt="">
@@ -91,17 +83,17 @@ include "php/add_question2.php";
 
               <div class="form-group col-xs-12">
                 <label>* Titulo pregunta:</label>
-                <input type="text" class="form-control" placeholder="Texto pregunta" name="titulPreg" value="<?php echo $titulo1; ?>" required />
+                <input type="text" class="form-control" placeholder="Texto pregunta" name="titulPreg" required />
               </div>
 
               <div class="form-group col-md-6">
                 <label>Imagen (Url):</label>
-                <input type="file" name="fileToUpload" id="fileToUpload" value="<?php echo $imagen1; ?>"/>
+                <input type="file" name="fileToUpload" id="fileToUpload"/>
               </div>
 
               <div class="form-group col-xs-12">
                 <label>* Texto:</label>
-                <input type="text" class="form-control" placeholder="Texto pregunta" name=textoPreg value="<?php echo $texto1; ?>" required/>
+                <input type="text" class="form-control" placeholder="Texto pregunta" name=textoPreg required/>
               </div>
 
               <br>
@@ -112,7 +104,7 @@ include "php/add_question2.php";
 
               <div class="form-group col-xs-12">
                 <label>Tipo de respuesta: Si o No?</label>
-                <input type="checkbox" name="respuestaSimpl" id="respuestaSimpl" value="<?php echo $resp_s; ?>">
+                <input type="checkbox" name="respuestaSimpl" id="respuestaSimpl">
               </div>
 
               <div class="form-group col-xs-12">
@@ -122,15 +114,15 @@ include "php/add_question2.php";
             
               <div class="form-group col-md-4">
                 <label>Respuesta 1:</label>
-                <input type="textarea" class="form-control" placeholder="Escribe tu opcion 1" name="Resp1" id="Resp1" value="<?php echo $resp_1; ?>">
+                <input type="textarea" class="form-control" placeholder="Escribe tu opcion 1" name="Resp1" id="Resp1">
               </div>
               <div class="form-group col-md-4">
                 <label>Respuesta 2:</label>
-                <input type="textarea" class="form-control" placeholder="Escribe tu opcion 2" name="Resp2" value="<?php echo $resp_2; ?>">
+                <input type="textarea" class="form-control" placeholder="Escribe tu opcion 2" name="Resp2">
               </div>
               <div class="form-group col-md-4">
                 <label>Respuesta 3:</label>
-                <input type="textarea" class="form-control" placeholder="Escribe tu opcion 3" name="Resp3" value="<?php echo $resp_3; ?>">
+                <input type="textarea" class="form-control" placeholder="Escribe tu opcion 3" name="Resp3">
               </div>
 
               <div class="form-group col-xs-12">
