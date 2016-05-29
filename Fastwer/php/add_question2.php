@@ -6,6 +6,7 @@ $target_dir = "../images/";
 $uploadOk = 1;
 $imageFileType = pathinfo($target_file,PATHINFO_EXTENSION);
 // Check if image file is a actual image or fake image
+if(isset($_POST["fileToUpload"])) {
 if(isset($_POST["submit"])) {
     $check = getimagesize($_FILES["fileToUpload"]["tmp_name"]);
     if($check !== false) {
@@ -52,7 +53,7 @@ if ($uploadOk == 0) {
     }
     
 }
-
+}
 
 //check si han escrito algo en el input de titulo de pregunta
 if(isset($_POST["titulPreg"])){
@@ -87,11 +88,13 @@ if(isset($_POST["titulPreg"])){
             }
             // esta variable dice que se ha echo el insert de la pregunta correctamente (luego en el otro php depende si es 1 o 0 hara echo de un texto o otro)
             $variablePasar = '1';
+            print "<script>alert(\"Insert correcto!!\");window.location='../home.php';</script>";
 
         } else {
             
             // esta variable dice que se ha echo el insert de la pregunta incorrectamente
             $variablePasar = '0';
+            print "<script>alert(\"Insert incorrecto!!\");window.location='../home.php';</script>";
 
         }
 
@@ -134,23 +137,25 @@ if(isset($_POST["titulPreg"])){
             
             // esta variable dice que se ha echo el insert de la pregunta correctamente
             $variablePasar = 1;
+            print "<script>alert(\"Insert correcto!!\");window.location='../home.php';</script>";
 
         }else{
             
             // esta variable dice que se ha echo el insert de la pregunta incorrectamente
             $variablePasar=0;
-            
+            print "<script>alert(\"Insert incorrecto!!\");window.location='../home.php';</script>";
         }
         
     }else{
         
         // esta variable dice que se ha echo el insert de la pregunta incorrectamente
+        print "<script>alert(\"Insert incorrecto!!\");window.location='../home.php';</script>";
         $variablePasar=0;
         
     }
     
     
-    print "<script>window.location='../home.php';</script>";
+    
 
 }
 

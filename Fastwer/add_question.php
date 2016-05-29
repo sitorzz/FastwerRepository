@@ -128,8 +128,15 @@ include "php/add_question2.php";
         <div class="row">
            
            <!-- Formulario para añadir nuevas preguntas -->
-           <form method="POST" action="php/add_question2.php" enctype="multipart/form-data" id="uno">
-
+           <?php
+           if($id_pregunta != 0){
+            echo '
+           <form method="POST" action="php/update_question.php?id_pregunta='.$id_pregunta.'" enctype="multipart/form-data" id="dos">';
+           }else{
+           echo '
+           <form method="POST" action="php/add_question2.php" enctype="multipart/form-data" id="uno">';
+          }
+           ?>
               <div class="form-group col-xs-12">
                 <label>* Titulo pregunta:</label>
                 <input type="text" class="form-control" placeholder="Texto pregunta" name="titulPreg" value="<?php echo $titulo1; ?>" required />
