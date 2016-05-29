@@ -118,7 +118,7 @@ if(isset($_POST["titulPreg"])){
         //si no han seleccionado el checkbox y han rellenado el primer input almenos se hace el insert de esa pregunta (en la tabla question)
 
         if($aux == null){
-             $updateRespComp="update question set title='$tituloPregun', question='$textoPregun', is_simple='s' WHERE id_question=".$id_pregunta."";
+             $updateRespComp="update question set title='$tituloPregun', question='$textoPregun', is_simple='n' WHERE id_question=".$id_pregunta."";
         }else{
             $updateRespComp="update question set title='$tituloPregun', question='$textoPregun', image_question=".$aux.", is_simple='n' WHERE id_question=".$id_pregunta."";
         }

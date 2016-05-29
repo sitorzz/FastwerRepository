@@ -13,7 +13,7 @@
             die("Database query failed: " . mysqli_error());
         }
 
-         print "<script>window.location='misNotificaciones.php';</script>";
+         print "<script>alert(\"Eliminación de pregunta satisfactoriamente!!\");window.location='home.php';</script>";
 
     ?>
 
