@@ -1,6 +1,5 @@
 <?php 
 include "php/session.php";
-include "php/add_question2.php";
 ?>
 
 <!DOCTYPE html>
@@ -63,7 +62,7 @@ include "php/add_question2.php";
             </div>';
           }
 
-          $id_pregunta = $_GET['id_pregunta']; 
+          @$id_pregunta = $_GET['id_pregunta']; 
 
             if($id_pregunta != 0){
             $resultSelect2 = mysqli_query($con,"select q.title, q.question, q.image_question, q.is_simple FROM question q WHERE fk_user = ".$id_session." and id_question = ".$id_pregunta." ");
@@ -139,7 +138,7 @@ include "php/add_question2.php";
            ?>
               <div class="form-group col-xs-12">
                 <label>* Titulo pregunta:</label>
-                <input type="text" class="form-control" placeholder="Texto pregunta" name="titulPreg" value="<?php echo $titulo1; ?>" required />
+                <input type="text" class="form-control" placeholder="Texto pregunta" name="titulPreg" value="<?php echo @$titulo1; ?>" required />
               </div>
 
               <div class="form-group col-md-6">
@@ -149,7 +148,7 @@ include "php/add_question2.php";
 
               <div class="form-group col-xs-12">
                 <label>* Texto:</label>
-                <input type="text" class="form-control" placeholder="Texto pregunta" name=textoPreg value="<?php echo $texto1; ?>" required/>
+                <input type="text" class="form-control" placeholder="Texto pregunta" name=textoPreg value="<?php echo @$texto1; ?>" required/>
               </div>
 
               <br>
@@ -160,7 +159,7 @@ include "php/add_question2.php";
 
               <div class="form-group col-xs-12">
                 <label>Tipo de respuesta: Si o No?</label>
-                <input type="checkbox" name="respuestaSimpl" id="respuestaSimpl" <?php echo ($resp_s==1 ? 'checked' : '');?> >
+                <input type="checkbox" name="respuestaSimpl" id="respuestaSimpl" <?php echo (@$resp_s==1 ? 'checked' : '');?> >
               </div>
 
               <div class="form-group col-xs-12">
@@ -170,15 +169,15 @@ include "php/add_question2.php";
             
               <div class="form-group col-md-4">
                 <label>Respuesta 1:</label>
-                <input type="textarea" class="form-control" placeholder="Escribe tu opcion 1" name="Resp1" id="Resp1" value="<?php echo $resp_1; ?>">
+                <input type="textarea" class="form-control" placeholder="Escribe tu opcion 1" name="Resp1" id="Resp1" value="<?php echo @$resp_1; ?>">
               </div>
               <div class="form-group col-md-4">
                 <label>Respuesta 2:</label>
-                <input type="textarea" class="form-control" placeholder="Escribe tu opcion 2" name="Resp2" value="<?php echo $resp_2; ?>">
+                <input type="textarea" class="form-control" placeholder="Escribe tu opcion 2" name="Resp2" value="<?php echo @$resp_2; ?>">
               </div>
               <div class="form-group col-md-4">
                 <label>Respuesta 3:</label>
-                <input type="textarea" class="form-control" placeholder="Escribe tu opcion 3" name="Resp3" value="<?php echo $resp_3; ?>">
+                <input type="textarea" class="form-control" placeholder="Escribe tu opcion 3" name="Resp3" value="<?php echo @$resp_3; ?>">
               </div>
 
               <div class="form-group col-xs-12">
